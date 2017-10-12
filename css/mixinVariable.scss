@@ -1,0 +1,114 @@
+// FONTS
+
+@font-face {
+  src: url("../fonts/junction-light.woff");
+  font-family: 'Junction Light'
+}
+
+$header: 'Josefin Sans', sans-serif;
+$body: 'Raleway', sans-serif;
+
+$black: #141416;
+$grey: #7A7575;
+$lt-grey: #E0DEE0;
+$pink: #FAC6D0;
+$white: rgb(253,253,253);
+$na-blue: #9CA6DB;
+
+//HAMBURGER
+
+@mixin hamburger {
+  background-color: $white;
+  content: "";
+  display: block;
+  height: 2px;
+  position: absolute;
+  right: 0;
+  transform: translateY(0);
+  transition: .3s ease-in-out;
+  width: 30px;
+}
+
+@mixin arrow {
+
+    &::before {
+      bottom: 6px;
+      background-color: $white;
+      content: "";
+      display: block;
+      height: 1px;
+      position: absolute;
+      right: -15px;
+      width: 9px;
+    }
+
+    &::after {
+      border-top: 1px solid #fdfdfd;
+      border-right: 1px solid #fdfdfd;
+      bottom: 3px;
+      content: "";
+      height: 6px;
+      position: absolute;
+      right: -16px;
+      transform: rotate(45deg);
+      width: 6px;
+    }
+}
+
+@mixin arrowUp {
+  @include arrow;
+
+    &::before {
+      right: calc(50% - 1px);
+      top: 5px;
+      transform: rotate(-90deg);
+    }
+
+    &::after {
+      right: 50%;
+      top: 0;
+      transform: rotate(-45deg);
+    }
+}
+
+@mixin arrowDown {
+  @include arrowUp;
+
+    &::before {
+      bottom: 5px;
+      top: inherit;
+      transform: rotate(90deg);
+    }
+
+    &::after {
+      bottom: 0;
+      top: inherit;
+      transform: rotate(135deg);
+    }
+}
+
+@mixin bullet {
+
+    &::after {
+      background-color: $grey;
+      border-radius: 100%;
+      content: "";
+      display: inline-block;
+      height: .25em;
+      margin-bottom: .125em;
+      margin-left: 1em;
+      width: .25em;
+    }
+}
+
+@mixin lineDown {
+
+    &::after {
+      background-color: $white;
+      bottom: 0;
+      content: "";
+      height: 4em;
+      position: absolute;
+      width: 1px;
+    }
+}

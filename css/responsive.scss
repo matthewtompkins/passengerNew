@@ -1,0 +1,37 @@
+
+
+$width-small: 768px;
+$width-medium: 992px;
+$width-large: 1200px;
+$width-xl: 1201px;
+
+@mixin responsive($width) {
+
+
+  @if $width == small-screen {
+
+    @media only screen and (max-width: $width-small) {@content};
+  }
+
+  @else if $width == medium-screen {
+
+    @media only screen and (max-width: $width-medium) {@content};
+  }
+
+
+  @if $width == large-screen {
+
+    @media only screen and (max-width: $width-large) {@content};
+  }
+
+  @else if $width == xl-screen {
+
+    @media only screen and (min-width: $width-xl) {@content};
+  }
+}
+
+@mixin landscape {
+
+    @media only screen and (max-height: 576px)
+                       and (orientation: landscape) {@content};
+}

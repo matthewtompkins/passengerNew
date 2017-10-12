@@ -1,0 +1,136 @@
+@import 'reset.scss';
+@import 'responsive.scss';
+@import 'mixinVariable.scss';
+@import 'content.scss';
+@import 'structure.scss';
+
+/*------------------------
+-------RESPONSIVE---------
+------------------------*/
+
+//HOME PAGE
+
+.headerMain {
+
+  @include responsive(small-screen) {
+    background-color: $white;
+    padding: 1em;
+
+      .hamburger {
+
+        &::before {
+          background-color: $grey;
+        }
+
+        &::after {
+          background-color: $grey;
+        }
+      }
+  }
+}
+
+.bgText {
+
+    @include responsive(small-screen) {
+      display: none;
+    }
+}
+
+.imgMain {
+
+    @include responsive(small-screen) {
+      flex-direction: column;
+      height: 100%;
+      transform: translateY(0)!important;
+      width: 100%;
+
+        .titleConLeft {
+          position: static;
+          left: inherit;
+
+            p {
+              left: inherit;
+              position: static;
+            }
+        }
+
+        .titleConRight {
+          position: static;
+          right: inherit;
+
+            p {
+              position: static;
+              right: inherit;
+            }
+        }
+    }
+}
+
+.sidebar {
+
+    @include responsive(small-screen) {
+      display: none;
+    }
+}
+
+.mission {
+
+    @include responsive(small-screen) {
+      display: block;
+      height: auto;
+
+        .imgMission {
+          display: none;
+        }
+
+        .missionStatement {
+          background-color: $grey;
+          bottom: inherit;
+          left: 0;
+          max-width: 100%;
+          position: static;
+          text-align: center;
+          width: 100%;
+        }
+    }
+}
+
+.serviceGrid {
+
+    @include responsive(small-screen) {
+      grid-template-columns: 80vw;
+      grid-gap: 2vw;
+      grid-template-rows: 40vw 40vw 40vw 40vw;
+      padding-bottom: 3em;
+      width: 80vw;
+
+        .gridCon {
+          display: none;
+        }
+
+        .gridImg {
+          grid-column: 1 / 2;
+          width: 100%;
+        }
+
+        .imgTrans {
+          grid-row: 1 / 2;
+        }
+
+        .imgCGR {
+          grid-row: 2 / 3;
+        }
+
+        .imgMeet {
+          grid-row: 3 / 4;
+        }
+
+        .imgComm {
+          grid-row: 4 / 5;
+        }
+
+        .imgTitle {
+          opacity: 1;
+        }
+    }
+}

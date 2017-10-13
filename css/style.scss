@@ -13,17 +13,15 @@
 .headerMain {
 
   @include responsive(small-screen) {
-    background-color: $white;
-    padding: 1em;
 
       .hamburger {
 
         &::before {
-          background-color: $grey;
+          background-color: $white;
         }
 
         &::after {
-          background-color: $grey;
+          background-color: $white;
         }
       }
   }
@@ -43,6 +41,17 @@
       height: 100%;
       transform: translateY(0)!important;
       width: 100%;
+
+        .mainButtons {
+          margin-top: 2.618em;
+          top: inherit;
+
+            a {
+              background-color: $pink;
+              border: 2px solid $pink;
+              color: $grey;
+            }
+        }
 
         .titleConLeft {
           left: inherit;

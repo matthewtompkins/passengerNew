@@ -289,11 +289,11 @@ h3 {
   background-color: #FAC6D0; }
 
 .hamburgerClose::before {
-  background-color: #7A7575;
+  background-color: #7A7575 !important;
   top: 19px;
   transform: rotate(45deg); }
 .hamburgerClose::after {
-  background-color: #7A7575;
+  background-color: #7A7575 !important;
   bottom: 19px;
   transform: rotate(-45deg); }
 
@@ -825,13 +825,10 @@ h3 {
 -------RESPONSIVE---------
 ------------------------*/
 @media only screen and (max-width: 768px) {
-  .headerMain {
-    background-color: #fdfdfd;
-    padding: 1em; }
-    .headerMain .hamburger::before {
-      background-color: #7A7575; }
-    .headerMain .hamburger::after {
-      background-color: #7A7575; } }
+  .headerMain .hamburger::before {
+    background-color: #fdfdfd; }
+  .headerMain .hamburger::after {
+    background-color: #fdfdfd; } }
 
 @media only screen and (max-width: 768px) {
   .bgText {
@@ -843,6 +840,13 @@ h3 {
     height: 100%;
     transform: translateY(0) !important;
     width: 100%; }
+    .imgMain .mainButtons {
+      margin-top: 2.618em;
+      top: inherit; }
+      .imgMain .mainButtons a {
+        background-color: #FAC6D0;
+        border: 2px solid #FAC6D0;
+        color: #7A7575; }
     .imgMain .titleConLeft {
       left: inherit;
       margin-top: 50vh;

@@ -308,13 +308,13 @@ h3 {
 .hamburgerClose {
 
     &::before {
-      background-color: $grey;
+      background-color: $grey!important;
       top: 19px;
       transform: rotate(45deg);
     }
 
     &::after {
-      background-color: $grey;
+      background-color: $grey!important;
       bottom: 19px;
       transform: rotate(-45deg);
     }

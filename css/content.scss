@@ -381,6 +381,10 @@ h3 {
   width: 60vw;
 }
 
+.titleConLeft, .titleConRight {
+  margin-top: 40vh;
+}
+
 .titleLeft {
   left: -50%;
 }
@@ -395,7 +399,7 @@ h3 {
 }
 
 .mainButtons {
-  margin-bottom: 4.236em;
+  top: calc( 100% - 5.236em );
 }
 
 .mission {

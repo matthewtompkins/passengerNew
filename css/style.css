@@ -352,6 +352,9 @@ h3 {
   height: 80vh;
   width: 60vw; }
 
+.titleConLeft, .titleConRight {
+  margin-top: 40vh; }
+
 .titleLeft {
   left: -50%; }
 
@@ -363,7 +366,7 @@ h3 {
   opacity: .1; }
 
 .mainButtons {
-  margin-bottom: 4.236em; }
+  top: calc( 100% - 5.236em ); }
 
 .mission {
   height: 125vh; }
@@ -634,6 +637,9 @@ h3 {
 .gridImg {
   width: 0; }
 
+.gridCon p {
+  min-width: calc(20vw - 2em); }
+
 .imgTitle {
   background-color: rgba(10, 10, 10, 0.6); }
 
@@ -838,12 +844,14 @@ h3 {
     transform: translateY(0) !important;
     width: 100%; }
     .imgMain .titleConLeft {
-      position: static;
-      left: inherit; }
+      left: inherit;
+      margin-top: 50vh;
+      position: static; }
       .imgMain .titleConLeft p {
         left: inherit;
         position: static; }
     .imgMain .titleConRight {
+      margin-top: 1.5em;
       position: static;
       right: inherit; }
       .imgMain .titleConRight p {
@@ -891,5 +899,13 @@ h3 {
       grid-row: 4 / 5; }
     .serviceGrid .imgTitle {
       opacity: 1; } }
+
+@media only screen and (max-width: 768px) {
+  .footerNav {
+    padding-left: 1em;
+    padding-right: 1em; }
+    .footerNav .footSoc {
+      padding-left: 0;
+      padding-right: 0; } }
 
 /*# sourceMappingURL=style.css.map */

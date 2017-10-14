@@ -628,7 +628,7 @@ h3 {
 
 .homePage {
   height: 100vh;
-  max-height: 100vh; }
+  min-height: 100vh; }
 
 .article {
   max-width: 45vw; }

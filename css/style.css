@@ -368,8 +368,11 @@ h3 {
   right: -50%; }
 
 .bgText {
-  font-size: 100vw;
-  opacity: .1; }
+  font-size: 40vw;
+  line-height: 40vw;
+  opacity: .1;
+  right: 5vw;
+  top: 0; }
 
 .mainButtons {
   top: calc( 100% - 5.236em ); }

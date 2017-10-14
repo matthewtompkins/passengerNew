@@ -70,7 +70,7 @@ document.addEventListener("scroll", function() {
 
   if ( winWidth > screenSmall && sidebar.offset().top >= homePage.height() ) {
 
-    //bgText.addClass("fontPink");
+    bgText.addClass("fontPink");
 
   }
 

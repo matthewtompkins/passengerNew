@@ -268,12 +268,12 @@
 }
 
 .gridImg {
-  background-size: 20vw 20vw;
+  background-size: 25vw 25vw;
   transition-timing-function: linear;
   width: 0;
 
     &:hover {
-      background-size: 25vw 25vw;
+      background-size: 20vw 20vw;
     }
 }
 

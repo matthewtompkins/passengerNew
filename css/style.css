@@ -644,11 +644,11 @@ h3 {
   width: 86vw; }
 
 .gridImg {
-  background-size: 20vw 20vw;
+  background-size: 25vw 25vw;
   transition-timing-function: linear;
   width: 0; }
   .gridImg:hover {
-    background-size: 25vw 25vw; }
+    background-size: 20vw 20vw; }
 
 .gridCon p {
   min-width: calc(20vw - 2em); }

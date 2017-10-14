@@ -380,6 +380,10 @@ h3 {
 .imgMain {
   background-image: url("../img/main3.jpg");
   height: 80vh;
+  left: 50%;
+  margin-left: calc(-60vw / 2);
+  margin-top: calc(-80vh / 2);
+  top: 50%;
   width: 60vw;
 }
 
@@ -449,8 +453,8 @@ h3 {
   transition: .9s;
 }
 
-@keyframes bob {
-  0%{transform: translateY(0px);}
-  50%{transform: translateY(10px);}
-  100%{transform: translateY(0px);}
+@keyframes bgZoom {
+  0% {background-size: 20vw 20vw;}
+  50% {background-size: 25vw 25vw;}
+  100% {background-size: 20vw 20vw;}
 }

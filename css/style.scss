@@ -14,7 +14,12 @@
 
   @include responsive(small-screen) {
 
+      .logoMain {
+        margin: 1em;
+      }
+
       .hamburger {
+        margin: 1em;
 
         &::before {
           background-color: $white;
@@ -39,6 +44,11 @@
     @include responsive(small-screen) {
       flex-direction: column;
       height: 100%;
+      left: 0;
+      margin-left: 0;
+      margin-top: 0;
+      position: absolute;
+      top: 0;
       transform: translateY(0)!important;
       width: 100%;
 
@@ -120,6 +130,7 @@
         }
 
         .gridImg {
+          background-size: 80vw 80vw;
           grid-column: 1 / 2;
           width: 100%;
         }
@@ -129,6 +140,7 @@
         }
 
         .imgCGR {
+          background-position: top center;
           grid-row: 2 / 3;
         }
 

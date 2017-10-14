@@ -268,7 +268,13 @@
 }
 
 .gridImg {
+  background-size: 20vw 20vw;
+  transition-timing-function: linear;
   width: 0;
+
+    &:hover {
+      background-size: 25vw 25vw;
+    }
 }
 
 .gridCon p {
@@ -280,7 +286,7 @@
 }
 
 .imgTrans {
-  background-image: url("../img/trans.jpg");
+  background-image: url("../img/transThumb.jpg");
   grid-column: 1 / 2;
   grid-row: 1 / 2;
 }
@@ -292,49 +298,49 @@
 }
 
 .imgCGR {
-  background-image: url("../img/cgr.jpg");
+  background-image: url("../img/cgrThumb.jpg");
   grid-column: 2 / 3;
   grid-row: 2 / 3;
-  transition-delay: .8s;
+  transition-delay: .4s;
 }
 
 .conCGR {
   grid-column: 2 / 3;
   grid-row: 1 / 2;
-  transition-delay: .8s;
+  transition-delay: .4s;
   @include arrowDown;
 }
 
 .imgMeet {
-  background-image: url("../img/meet.jpg");
+  background-image: url("../img/meetThumb.jpg");
   grid-column: 3 / 4;
   grid-row: 1 / 2;
-  transition-delay: 1.6s;
+  transition-delay: .8s;
 }
 
 .conMeet {
   grid-column: 3 / 4;
   grid-row: 2 / 3;
-  transition-delay: 1.6s;
+  transition-delay: .8s;
   @include arrowUp;
 }
 
 .imgComm {
-  background-image: url("../img/comm.jpg");
+  background-image: url("../img/commThumb.jpg");
   grid-column: 4 / 5;
   grid-row: 2 / 3;
-  transition-delay: 2.4s;
+  transition-delay: 1.2s;
 }
 
 .conComm {
   grid-column: 4 / 5;
   grid-row: 1 / 2;
-  transition-delay: 2.4s;
+  transition-delay: 1.2s;
   @include arrowDown;
 }
 
 .gridImg p {
-  transition-delay: 2.6s;
+  transition-delay: 1.6s;
 }
 
 .instaCon {

@@ -15,6 +15,12 @@ var navOption = $(".navOption");
 
 //HOME PAGE SECTION ELEMENTS
 var homePage = $(".homePage");
+
+if ( winWidth < 768 ) {
+
+  homePage.height( winVar.height() );
+}
+
 var imgMain = $(".imgMain");
 var titleLeft = $(".titleLeft");
 var titleRight = $(".titleRight");

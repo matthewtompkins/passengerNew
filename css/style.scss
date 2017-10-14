@@ -28,8 +28,54 @@
         &::after {
           background-color: $white;
         }
+
+        &:hover {
+
+            &::before {
+              background-color: $white;
+              transform: translateY(0px);
+            }
+
+            &::after {
+              background-color: $white;
+              transform: translateY(0px);
+            }
+        }
+      }
+
+      .hamburgerClose {
+
+          &:hover {
+
+              &::before {
+                transform: rotate(45deg);
+              }
+
+              &::after {
+                transform: rotate(-45deg);
+              }
+          }
       }
   }
+}
+
+.siteNav {
+
+    @include responsive(small-screen) {
+      margin: 0 auto;
+      margin-bottom: 2em;
+      text-align: center;
+    }
+
+    &:hover > li {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+
+    &:hover > li:hover {
+      opacity: 1;
+      transform: translateX(0px);
+    }
 }
 
 .bgText {

@@ -848,7 +848,29 @@ h3 {
     .headerMain .hamburger::before {
       background-color: #fdfdfd; }
     .headerMain .hamburger::after {
-      background-color: #fdfdfd; } }
+      background-color: #fdfdfd; }
+    .headerMain .hamburger:hover::before {
+      background-color: #fdfdfd;
+      transform: translateY(0px); }
+    .headerMain .hamburger:hover::after {
+      background-color: #fdfdfd;
+      transform: translateY(0px); }
+  .headerMain .hamburgerClose:hover::before {
+    transform: rotate(45deg); }
+  .headerMain .hamburgerClose:hover::after {
+    transform: rotate(-45deg); } }
+
+@media only screen and (max-width: 768px) {
+  .siteNav {
+    margin: 0 auto;
+    margin-bottom: 2em;
+    text-align: center; } }
+.siteNav:hover > li {
+  opacity: 1;
+  transform: translateX(0px); }
+.siteNav:hover > li:hover {
+  opacity: 1;
+  transform: translateX(0px); }
 
 @media only screen and (max-width: 768px) {
   .bgText {

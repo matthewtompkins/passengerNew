@@ -814,6 +814,9 @@ h3 {
 .gridImg p {
   transition-delay: 2.6s; }
 
+.instaCon {
+  overflow: hidden; }
+
 #instafeed img {
   height: 10vw;
   min-height: 100px;

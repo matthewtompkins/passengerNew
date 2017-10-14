@@ -109,7 +109,7 @@ document.addEventListener("scroll", function() {
 
   //IMAGE ANIMATION SERVICES
 
-  if ( /*winWidth > screenSmall &&*/ x >= serviceContainer.offset().top - ( serviceContainer.height() / 3 ) ) {
+  if ( winWidth > screenSmall && x >= serviceContainer.offset().top - ( serviceContainer.height() / 3 ) ) {
 
     var gridImg = $(".gridImg").css("width", "100%");
 

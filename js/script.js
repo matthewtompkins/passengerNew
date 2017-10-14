@@ -117,7 +117,10 @@ document.addEventListener("scroll", function() {
 
         var gridCon = $(".gridCon").css("opacity", "1");
         var gridP = $(".gridImg p").css("opacity", "1");
-        gridImg.css("transition-delay", "0s");
+        gridImg.css({
+        "transition-delay" : "0s",
+        "transition" : "2s"
+        });
       }, 1000);
   }
 

@@ -86,7 +86,10 @@
 }
 
 .homePage {
-  height: 100%;
+
+    @include responsive(small-screen) {
+      height: 100%;
+    }
 }
 
 .imgMain {

@@ -195,7 +195,7 @@ h3 {
   text-align: center; }
 
 .textBreak {
-  margin-bottom: 2em; }
+  margin-bottom: 1.618em; }
 
 /*------------------------
 ------------BG-----------
@@ -415,7 +415,7 @@ h3 {
   width: 70vw; }
 
 .serviceTitle {
-  padding-top: 3em; }
+  padding-top: 2em; }
 
 /*------------------------
 --------ANIMATIONS--------
@@ -864,13 +864,13 @@ h3 {
   .siteNav {
     margin: 0 auto;
     margin-bottom: 2em;
-    text-align: center; } }
-.siteNav:hover > li {
-  opacity: 1;
-  transform: translateX(0px); }
-.siteNav:hover > li:hover {
-  opacity: 1;
-  transform: translateX(0px); }
+    text-align: center; }
+    .siteNav:hover > li {
+      opacity: 1;
+      transform: translateX(0px); }
+    .siteNav:hover > li:hover {
+      opacity: 1;
+      transform: translateX(0px); } }
 
 @media only screen and (max-width: 768px) {
   .bgText {

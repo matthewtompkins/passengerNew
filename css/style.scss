@@ -65,16 +65,16 @@
       margin: 0 auto;
       margin-bottom: 2em;
       text-align: center;
-    }
 
-    &:hover > li {
-      opacity: 1;
-      transform: translateX(0px);
-    }
+          &:hover > li {
+            opacity: 1;
+            transform: translateX(0px);
+          }
 
-    &:hover > li:hover {
-      opacity: 1;
-      transform: translateX(0px);
+          &:hover > li:hover {
+            opacity: 1;
+            transform: translateX(0px);
+          }
     }
 }
 

@@ -347,7 +347,7 @@ h3 {
   margin: 0 auto 2em auto; }
 
 /*------------------------
---------FRONT-PAGE--------
+--------HOME-PAGE---------
 ------------------------*/
 .imgMain {
   background-image: url("../img/main3.jpg");
@@ -416,6 +416,13 @@ h3 {
 
 .serviceTitle {
   padding-top: 2em; }
+
+/*------------------------
+--------OUR-STORY---------
+------------------------*/
+.imgStory {
+  background-image: url("../img/dark.jpg");
+  height: 30vh; }
 
 /*------------------------
 --------ANIMATIONS--------
@@ -621,7 +628,7 @@ h3 {
   overflow: scroll; }
 
 /*------------------------
--------SITE-ELEMENTS------
+----HOMEPAGE-ELEMENTS-----
 ------------------------*/
 .headerMain {
   width: 100%; }
@@ -836,6 +843,12 @@ h3 {
   max-width: 612px;
   vertical-align: middle;
   width: 10vw; }
+
+/*------------------------
+------OUR-STORY-EL--------
+------------------------*/
+.heroStory {
+  min-height: 60vh; }
 
 /*------------------------
 -------RESPONSIVE---------

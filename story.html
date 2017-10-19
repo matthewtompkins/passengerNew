@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Passenger Recovery - Let Passenger Light the Way</title>
+  <meta name="description" content="Passenger Recovery is a new type of support system for travelers in recovery.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Josefin+Sans|Raleway" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="./js/instafeed.min.js"></script>
+  <script type="text/javascript">
+    var feed = new Instafeed({
+        get: 'user',
+        userId: '3050738035',
+        clientId: '14f6cc56429b4b5a85d1173ed5311722',
+        accessToken: '3050738035.14f6cc5.a8d66e0ff8d84fb9b06c77c3779c7f19',
+        resolution: 'standard_resolution',
+        template: '<a href="{{link}}" target="_blank"><img src="{{image}}" />',
+        sortBy: 'most-recent',
+        limit: 20,
+        links: false
+    });
+    feed.run();
+  </script>
+</head>
+<body>
+  <header class="pFix z5 headerMain">
+    <div class="logo storyLogo logoMain nrc pAbs left marg2 contain op0">
+      <a href="./index.html" class="inLink dBlock"></a>
+    </div>
+    <div href="#" class="pAbs right marg2 hamburger"></div>
+  </header>
+  <div class="sidebar storySidebar pFix right bottom bgWhite z3 transition3">
+    <ul class="socialNav">
+      <li class="icon iconSB nrc contain pRel fb"><a href="#" class="inLink soLink pAbs dBlock" target="_blank"></a></li>
+      <li class="icon iconSB nrc contain pRel tw"><a href="#" class="inLink soLink pAbs dBlock" target="_blank"></a></li>
+      <li class="icon iconSB nrc contain pRel ig"><a href="#" class="inLink soLink pAbs dBlock" target="_blank"></a></li>
+    </ul>
+  </div>
+  <nav class="menu containerFluid z5 bgWhite pFix top left transition9">
+    <ul class="siteNav pAbs marg2 bottom left fullWidth fontHead fontLower fontGrey font3 ">
+      <li class="transition3 fullWidth navLi"><a href="#" class="navOption inLink dBlock op0 transition6">Compass</a></li>
+      <li class="transition3 fullWidth navLi"><a href="#" class="navOption inLink dBlock op0 transition6">Services</a></li>
+      <li class="transition3 fullWidth navLi"><a href="./story.html" class="navOption inLink dBlock op0 transition6">Our Story</a></li>
+      <li class="transition3 fullWidth navLi"><a href="#" class="navOption inLink dBlock op0 transition6">Thought of the Day</a></li>
+      <li class="transition3 fullWidth navLi"><a href="#" class="navOption inLink dBlock op0 transition6">Contact</a></li>
+      <li class="transition3 fullWidth navLi"><a href="#" class="navOption inLink dBlock op0 transition6">Donate</a></li>
+    </ul>
+  </nav>
+  <main>
+    <section class="heroStory fullWidth pRel bgBlack z4">
+      <h2 class="fontHead fontLower fontWhite pAbs bottom left pad1">1. <br>Our Problem</h2>
+    </section>
+    <div class="imgStory fullWidth pRel z4 cover nrc"></div>
+    <section class="problem fullWidth pRel bgWhite">
+      <article class="artProb fontBody auto alignCenter">
+        <p class="fontBlack">
+      </article>
+    </section>
+  </main>
+  <script src="./js/script.js"></script>
+  <script src="./js/story.js"></script>
+</body>
+</html>

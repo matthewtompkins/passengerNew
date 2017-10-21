@@ -347,10 +347,6 @@
   overflow: hidden;
 }
 
-#instafeed {
-
-}
-
 #instafeed img {
   height: 10vw;
   max-height: 612px;
@@ -365,4 +361,8 @@
 
 .heroStory {
   min-height: 60vh;
+}
+
+.artStory {
+  max-width: 80vw;
 }

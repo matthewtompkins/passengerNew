@@ -1,5 +1,6 @@
 
 var winVar = $(window);
+var y = winVar.width();
 
 //GLOBAL PAGE ELEMENTS
 var headerMain = $(".headerMain");
@@ -40,8 +41,9 @@ var mainFooter = $(".mainFooter");
 
 document.addEventListener("scroll", function() {
 
-  var x = $(this).scrollTop();
-  var y = $(window).width();
+  //var x = $(this).scrollTop();
+  var x = winVar.scrollTop();
+  //var y = $(window).width();
   winWidth = y;
 
   //ANIMATE COLOR CHANGE FOR HAMBURGER AND BG LETTERS
@@ -74,12 +76,12 @@ document.addEventListener("scroll", function() {
 
   //ANIMATE SIDEBAR
 
-  if ( winWidth > screenSmall && sidebar.offset().top >= homePage.height() ) {
+  /*if ( winWidth > screenSmall && sidebar.offset().top >= homePage.height() ) {
 
     bgText.addClass("fontPink");
 
   }
-
+  */
   if ( winWidth > screenSmall && sidebar.offset().top < homePage.height() ) {
 
     bgText.removeClass("fontPink");

@@ -150,7 +150,7 @@ h3 {
 }
 
 .fontLtGrey {
-  color: $lt-grey;
+  color: $ltGrey;
 }
 
 .fontGrey {
@@ -206,7 +206,7 @@ h3 {
 }
 
 .bgLtGrey {
-  background: $lt-grey;
+  background: $ltGrey;
 }
 
 .bgGrey {
@@ -444,9 +444,80 @@ h3 {
 --------OUR-STORY---------
 ------------------------*/
 
-.imgStory {
-  background-image: url("../img/dark.jpg");
+.belowHero {
   height: 32vh;
+}
+
+.imgProb {
+  background-image: url("../img/dark.jpg");
+}
+
+.imgInsp {
+  background-image: url("../img/match.jpg");
+}
+
+.imgSol {
+  background-image: url("../img/sol.jpg");
+  background-position: 0% 75%;
+}
+
+.imgCloud {
+  animation: cloud 120s linear;
+  animation-iteration-count: infinite;
+  background-image: url("../img/cloud.png");
+  height: 5vw;
+  max-height: 74px;
+  max-width: 200px;
+  width: 5vw;
+}
+
+.cloud2 {
+  animation-direction: reverse;
+}
+
+.imgTree {
+  background-image: url("../img/treePink.svg");
+  bottom: -1px;
+  height: 10vw;
+  left: 4em;
+  max-height: 200px;
+  max-width: 200px;
+  width: 10vw;
+}
+
+.imgCar {
+  animation: carTest 30s linear;
+  animation-iteration-count: infinite;
+  background-image: url("../img/car.png");
+  bottom: -1px;
+  height: 3.705vw;
+  max-height: 74px;
+  max-width: 200px;
+  width: 10vw;
+}
+
+.storyCon {
+  max-width: 50vw;
+}
+
+.storyConLeft {
+  border-right: 1px solid $ltGrey;
+}
+
+.storyConRight {
+  border: 1px solid $ltGrey;
+}
+
+.insp {
+
+    .storyConLeft {
+      border: 1px solid $pink;
+    }
+
+    .storyConRight {
+      border: none;
+      border-left: 1px solid $pink;
+    }
 }
 
 /*------------------------
@@ -469,4 +540,15 @@ h3 {
   0% {background-size: 20vw 20vw;}
   50% {background-size: 25vw 25vw;}
   100% {background-size: 20vw 20vw;}
+}
+
+@keyframes cloud {
+  0% {left: 0;}
+  100% {left: 100vw;}
+}
+
+@keyframes carTest {
+  0% {right: -5vw;}
+  8% {right: 30vw;}
+  100% {right: 105vw;}
 }

@@ -12,7 +12,13 @@ var titleLeft = document.getElementById("titleLeft");
 var titleRight = document.getElementById("titleRight");
 
 var contMiss = document.getElementById("contMiss");
-var missHeight = contMiss.offsetHeight;
+var missHeight;
+
+if (contMiss) {
+
+   missHeight = contMiss.offsetHeight;
+}
+
 var imgMission = document.getElementById("imgMission");
 var missionStatement = document.getElementById("missionStatement");
 
@@ -40,11 +46,15 @@ var navOption = $(".navOption");
 window.addEventListener("scroll", function() {
 
   if ( !ifMobile ) {
-    requestAnimationFrame(parallaxScroll);
+
+    if ( imgMain ) {
+
+      requestAnimationFrame(parallaxHome);
+    }
   }
 }, false);
 
-function parallaxScroll() {
+function parallaxHome() {
 
   var scrollTop = window.pageYOffset;
 
@@ -57,7 +67,7 @@ function parallaxScroll() {
 
   var missTop = contMiss.offsetTop;
 
-  if ( scrollTop >= missTop - 100 && scrollTop <= missTop + missHeight ) {
+  if ( contMiss && scrollTop >= missTop - 100 && scrollTop <= missTop + missHeight ) {
 
     requestAnimationFrame(articleShow);
     requestAnimationFrame(hamPink);
@@ -164,7 +174,12 @@ function closeMenu() {
     sidebar.removeClass("op0");
     bgText.removeClass("fontBlack")
           .addClass("fontWhite z2");
-    homePage.prepend(bgText);
+
+    if (homePage) {
+
+      homePage.prepend(bgText);
+    }
+    
     bgText.css("opacity", ".1")
             .addClass("dFlex");
   }, 1250);

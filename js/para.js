@@ -5,7 +5,28 @@ window.requestAnimationFrame = window.requestAnimationFrame
  || window.msRequestAnimationFrame
  || function(f){setTimeout(f, 1000/60)};
 
+ //GLOBAL PAGE ELEMENTS
+ var headerMain = $(".headerMain");
+ var hamburger = $(".hamburger").on("click", openMenu);
+ var sidebar = $(".sidebar");
+ var bgText = $(".bgText");
+ var winWidth = window.innerWidth;
+ var screenSmall = 768;
+ var ifMobile;
+
+ if ( winWidth <= screenSmall ) {
+   ifMobile = true;
+ } else {
+   ifMobile = false;
+ }
+
+ //MENU ELEMENTS
+ var menu = $(".menu");
+ var navOption = $(".navOption");
+
 //HOME PAGE ELEMENTS
+
+var homePage = $("#homePage");
 var imgMain = document.getElementById("imgMain");
 
 var titleLeft = document.getElementById("titleLeft");
@@ -24,35 +45,32 @@ var missionStatement = document.getElementById("missionStatement");
 
 var contService = document.getElementById("contService");
 
-//GLOBAL PAGE ELEMENTS
-var headerMain = $(".headerMain");
-var hamburger = $(".hamburger").on("click", openMenu);
-var sidebar = $(".sidebar");
-var bgText = $(".bgText");
-var winWidth = window.innerWidth;
-var screenSmall = 768;
-var ifMobile;
+//STORY PAGE ELEMENTS
 
-if ( winWidth <= screenSmall ) {
-  ifMobile = true;
-} else {
-  ifMobile = false;
+if ( window.location.pathname.includes("story.html") ) {
+
+  var contProb = document.getElementById("problem");
+  var probHeight;
+  var rightBorder = $("#rightBorder");
+  var probText = $("#probText");
+  var probHeight = contProb.offsetHeight;
 }
-
-//MENU ELEMENTS
-var menu = $(".menu");
-var navOption = $(".navOption");
 
 window.addEventListener("scroll", function() {
 
   if ( !ifMobile ) {
 
-    if ( imgMain ) {
+    if ( window.location.pathname.includes("index.html") ) {
 
       requestAnimationFrame(parallaxHome);
+    } else if ( window.location.pathname.includes("story.html") ) {
+
+      requestAnimationFrame(parallaxStory);
     }
   }
 }, false);
+
+//HOMEPAGE PARALLAX FUNCTIONS
 
 function parallaxHome() {
 
@@ -67,14 +85,16 @@ function parallaxHome() {
 
   var missTop = contMiss.offsetTop;
 
-  if ( contMiss && scrollTop >= missTop - 100 && scrollTop <= missTop + missHeight ) {
+  if ( scrollTop >= missTop - 100 && scrollTop <= missTop + missHeight ) {
 
     requestAnimationFrame(articleShow);
     requestAnimationFrame(hamPink);
+    requestAnimationFrame(bgTextPink);
   } else {
 
     requestAnimationFrame(articleHide);
     requestAnimationFrame(hamWhite);
+    requestAnimationFrame(bgTextNotPink);
   }
 
   var servTop = contService.offsetTop;
@@ -112,6 +132,50 @@ function serviceShow() {
     }, 1000);
 }
 
+//OUR-STORY PARALLAX FUNCTIONS
+
+function parallaxStory() {
+
+  var scrollTop = window.pageYOffset;
+
+  var probTop = contProb.offsetTop;
+
+  if ( scrollTop >= probTop - 200 && scrollTop <= probTop + probHeight ) {
+
+    requestAnimationFrame(function() {
+
+      animateBorder(rightBorder);
+      slideText(probText, )
+    });
+
+  } else if ( rightBorder.hasClass("animateBorder") ) {
+
+      requestAnimationFrame(function() {
+
+        removeBorder(rightBorder);
+      });
+    }
+}
+
+//OUR-STORY ANIMATE FUNCTIONS
+
+function animateBorder(object) {
+
+  object.addClass("animateBorder");
+}
+
+function removeBorder(object) {
+
+  object.removeClass("animateBorder");
+}
+
+function slideText(object, direction) {
+
+  object.css('"' + direction + '"', "0");
+}
+
+//MENU FUNCTIONS
+
 function hamWhite() {
 
   hamburger.removeClass("hamburgerPink")
@@ -122,6 +186,16 @@ function hamPink() {
 
   hamburger.removeClass("hamburgerWhite")
            .addClass("hamburgerPink");
+}
+
+function bgTextPink() {
+
+  bgText.addClass("fontPink");
+}
+
+function bgTextNotPink() {
+
+  bgText.removeClass("fontPink");
 }
 
 
@@ -179,7 +253,7 @@ function closeMenu() {
 
       homePage.prepend(bgText);
     }
-    
+
     bgText.css("opacity", ".1")
             .addClass("dFlex");
   }, 1250);

@@ -501,7 +501,17 @@ h3 {
 }
 
 .storyConLeft {
+}
+
+#rightBorder {
   border-right: 1px solid $ltGrey;
+  height: 0;
+  left: -1px;
+  width: 100%;
+}
+
+.animateBorder {
+  height: 100%!important;
 }
 
 .storyConRight {

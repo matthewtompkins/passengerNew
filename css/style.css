@@ -467,8 +467,14 @@ h3 {
 .storyCon {
   max-width: 50vw; }
 
-.storyConLeft {
-  border-right: 1px solid #E0DEE0; }
+#rightBorder {
+  border-right: 1px solid #E0DEE0;
+  height: 0;
+  left: -1px;
+  width: 100%; }
+
+.animateBorder {
+  height: 100% !important; }
 
 .storyConRight {
   border: 1px solid #E0DEE0; }

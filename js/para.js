@@ -49,11 +49,18 @@ var contService = document.getElementById("contService");
 
 if ( window.location.pathname.includes("story.html") ) {
 
+  //TEXT ANIMATIONS
   var contProb = document.getElementById("problem");
+
   var probHeight;
   var rightBorder = $("#rightBorder");
   var probText = $("#probText");
+  var probText2 = $("#probText2");
   var probHeight = contProb.offsetHeight;
+
+  var animTLBorder = $("#animTLBorder");
+  var animBRBorder = $("#animBRBorder");
+  var animTopBorder = $("#animTopBorder");
 }
 
 window.addEventListener("scroll", function() {
@@ -145,16 +152,23 @@ function parallaxStory() {
     requestAnimationFrame(function() {
 
       animateBorder(rightBorder);
-      slideText(probText, )
+      slideText(probText, "left");
+      slideText(probText2, "left");
+      animTLBorder.css("width", "calc(12em - 1px)");
+
+        setTimeout(function() {
+          animTLBorder.css("height", "100%");
+          animBRBorder.css("width", "100%");
+
+          setTimeout(function() {
+            animBRBorder.css("height", "100%");
+            animTopBorder.css("width", "100%");
+          }, 300);
+
+        }, 600);
     });
 
-  } else if ( rightBorder.hasClass("animateBorder") ) {
-
-      requestAnimationFrame(function() {
-
-        removeBorder(rightBorder);
-      });
-    }
+  }
 }
 
 //OUR-STORY ANIMATE FUNCTIONS
@@ -171,7 +185,12 @@ function removeBorder(object) {
 
 function slideText(object, direction) {
 
-  object.css('"' + direction + '"', "0");
+  object.css(direction, "0");
+}
+
+function hideText(object, direction) {
+
+  object.css(direction, "calc(100% + 2em)");
 }
 
 //MENU FUNCTIONS

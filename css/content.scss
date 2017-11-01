@@ -500,9 +500,6 @@ h3 {
   max-width: 50vw;
 }
 
-.storyConLeft {
-}
-
 #rightBorder {
   border-right: 1px solid $ltGrey;
   height: 0;
@@ -510,12 +507,46 @@ h3 {
   width: 100%;
 }
 
+#probText {
+  left: calc(100% + 2em);
+  transition-delay: .3s;
+}
+
+#probText2 {
+  left: calc(100% + 2em);
+  transition-delay: .6s;
+}
+
+#animTLBorder {
+  border-left: 1px solid $ltGrey;
+  border-top: 1px solid $ltGrey;
+  height: 0;
+  right: calc(100% - 12em + 1px);
+  transition-delay: .6s;
+  width: 0;
+}
+
+#animBRBorder {
+  border-bottom: 1px solid $ltGrey;
+  border-right: 1px solid $ltGrey;
+  height: 0;
+  transition-delay: .9s;
+  width: 0;
+}
+
+#animTopBorder {
+  border-top: 1px solid $ltGrey;
+  height: 0;
+  transition-delay: 1.2s;
+  width: 0;
+}
+
 .animateBorder {
   height: 100%!important;
 }
 
 .storyConRight {
-  border: 1px solid $ltGrey;
+//border: 1px solid $ltGrey;
 }
 
 .insp {

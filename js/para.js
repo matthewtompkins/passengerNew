@@ -67,7 +67,7 @@ window.addEventListener("scroll", function() {
 
   if ( !ifMobile ) {
 
-    if ( window.location.pathname.includes("index.html") ) {
+    if ( !window.location.pathname.includes("story.html") && !window.location.pathname.includes("contact.html") ) {
 
       requestAnimationFrame(parallaxHome);
     } else if ( window.location.pathname.includes("story.html") ) {

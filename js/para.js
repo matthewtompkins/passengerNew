@@ -193,8 +193,8 @@ function parallaxStory() {
 
       var calcDist = ( contInsp.offsetTop - window.pageYOffset + inspHeight ) / winWidth * 100;
 
-      animateScene(cloudOne, "left", calcDist, .8);
-      animateScene(cloudTwo, "right", calcDist, .5);
+      animateScene(cloudOne, "left", calcDist, .3);
+      animateScene(cloudTwo, "right", calcDist, .6);
       animateScene(car, "left", calcDist, 1);
     });
   }

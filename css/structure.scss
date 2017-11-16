@@ -311,14 +311,14 @@
   @include arrowDown;
 }
 
-.imgMeet {
-  background-image: url("../img/meetThumb.jpg");
+.imgComp {
+  background-image: url("../img/compass.png");
   grid-column: 3 / 4;
   grid-row: 1 / 2;
   transition-delay: .8s;
 }
 
-.conMeet {
+.conComp {
   grid-column: 3 / 4;
   grid-row: 2 / 3;
   transition-delay: .8s;
@@ -326,7 +326,8 @@
 }
 
 .imgComm {
-  background-image: url("../img/commThumb.jpg");
+  background-image: url("../img/tolhurst.jpg");
+  background-position: top center;
   grid-column: 4 / 5;
   grid-row: 2 / 3;
   transition-delay: 1.2s;

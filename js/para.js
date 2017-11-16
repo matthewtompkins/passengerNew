@@ -13,6 +13,7 @@ window.requestAnimationFrame = window.requestAnimationFrame
  var winWidth = window.innerWidth;
  var screenSmall = 768;
  var ifMobile;
+ var newScroll = 0;
 
  if ( winWidth <= screenSmall ) {
    ifMobile = true;
@@ -52,15 +53,21 @@ if ( window.location.pathname.includes("story.html") ) {
   //TEXT ANIMATIONS
   var contProb = document.getElementById("problem");
 
-  var probHeight;
+  var probHeight = contProb.offsetHeight;
   var rightBorder = $("#rightBorder");
   var probText = $("#probText");
   var probText2 = $("#probText2");
-  var probHeight = contProb.offsetHeight;
 
   var animTLBorder = $("#animTLBorder");
   var animBRBorder = $("#animBRBorder");
   var animTopBorder = $("#animTopBorder");
+
+  var contInsp = document.getElementById("insp");
+
+  var inspHeight = contInsp.offsetHeight;
+  var cloudOne = $("#cloudOne");
+  var cloudTwo = $("#cloudTwo");
+  var car = $("#car");
 }
 
 window.addEventListener("scroll", function() {
@@ -147,6 +154,8 @@ function parallaxStory() {
 
   var probTop = contProb.offsetTop;
 
+  var inspTop = contInsp.offsetTop;
+
   if ( scrollTop >= probTop - 200 && scrollTop <= probTop + probHeight ) {
 
     requestAnimationFrame(function() {
@@ -169,6 +178,28 @@ function parallaxStory() {
     });
 
   }
+
+  if ( scrollTop >= inspTop - inspHeight - 200 && scrollTop <= inspTop + inspHeight ) {
+
+      if ( scrollTop < newScroll ) {
+
+        car.css("transform", "scaleX(-1)");
+      } else {
+
+        car.css("transform", "scaleX(1)");
+      }
+
+    requestAnimationFrame(function() {
+
+      var calcDist = ( contInsp.offsetTop - window.pageYOffset + inspHeight ) / winWidth * 100;
+
+      animateScene(cloudOne, "left", calcDist, .8);
+      animateScene(cloudTwo, "right", calcDist, .5);
+      animateScene(car, "left", calcDist, 1);
+    });
+  }
+
+  newScroll = scrollTop;
 }
 
 //OUR-STORY ANIMATE FUNCTIONS
@@ -191,6 +222,14 @@ function slideText(object, direction) {
 function hideText(object, direction) {
 
   object.css(direction, "calc(100% + 2em)");
+}
+
+function animateScene(object, direction, distance, speed) {
+
+  var calcSpeed = distance * speed;
+  var makePercent = calcSpeed + '%';
+
+  object.css( direction, makePercent);
 }
 
 //MENU FUNCTIONS

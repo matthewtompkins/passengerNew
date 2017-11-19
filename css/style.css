@@ -508,6 +508,31 @@ h3 {
   border: none;
   border-left: 1px solid #FAC6D0; }
 
+.subTitle {
+  padding-top: .5em; }
+  .subTitle::before {
+    border-top: 1px solid #141416;
+    bottom: .25em;
+    content: "";
+    display: block;
+    height: .5em;
+    position: absolute;
+    width: 20px;
+    left: -1.5em; }
+  .subTitle::after {
+    border-top: 1px solid #141416;
+    bottom: .25em;
+    content: "";
+    display: block;
+    height: .5em;
+    position: absolute;
+    width: 20px;
+    right: -1.5em; }
+
+.solContent {
+  max-width: 100%;
+  width: 700px; }
+
 /*------------------------
 --------ANIMATIONS--------
 ------------------------*/

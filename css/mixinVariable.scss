@@ -112,3 +112,14 @@ $naBlue: #9CA6DB;
       width: 1px;
     }
 }
+
+@mixin sideLine {
+
+  border-top: 1px solid $black;
+  bottom: .25em;
+  content: "";
+  display: block;
+  height: .5em;
+  position: absolute;
+  width: 20px;
+}

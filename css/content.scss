@@ -558,6 +558,27 @@ h3 {
     }
 }
 
+.subTitle {
+  padding-top: .5em;
+
+    &::before {
+
+      @include sideLine;
+      left: -1.5em;
+    }
+
+    &::after {
+
+      @include sideLine;
+      right: -1.5em;
+    }
+}
+
+.solContent {
+  max-width: 100%;
+  width: 700px;
+}
+
 /*------------------------
 --------ANIMATIONS--------
 ------------------------*/

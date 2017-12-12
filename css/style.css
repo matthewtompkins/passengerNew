@@ -424,6 +424,9 @@ h3 {
   background-attachment: fixed;
   background-position: bottom;
   height: 32vh; }
+  @media only screen and (max-width: 768px) {
+    .belowHero {
+      background-attachment: inherit; } }
 
 .imgProb {
   background-image: url("../img/dark.jpg"); }
@@ -547,9 +550,15 @@ h3 {
 .reItem {
   background-size: 125%;
   height: calc(33vw - 8em);
+  min-height: 240px;
+  min-width: 240px;
   max-height: 400px;
   max-width: 400px;
   width: calc(33vw - 8em); }
+  @media only screen and (max-width: 768px) {
+    .reItem {
+      height: calc(100vw - 4em);
+      width: calc(100vw - 4em); } }
   .reItem:hover {
     background-size: 100%; }
   .reItem:hover .contHov {

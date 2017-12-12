@@ -409,7 +409,7 @@ h3 {
     color: #FAC6D0; }
 
 .imgMission {
-  background-image: url("../img/main.jpg");
+  background-image: url("../img/Homepage.jpg");
   height: 90vh;
   margin-top: 2em;
   width: 70vw; }
@@ -421,6 +421,8 @@ h3 {
 --------OUR-STORY---------
 ------------------------*/
 .belowHero {
+  background-attachment: fixed;
+  background-position: bottom;
   height: 32vh; }
 
 .imgProb {
@@ -532,6 +534,50 @@ h3 {
 .solContent {
   max-width: 100%;
   width: 700px; }
+
+/*------------------------
+--------RESOURCES---------
+------------------------*/
+.imgRecords {
+  background-image: url("../img/records.jpg"); }
+
+.resources {
+  flex-wrap: wrap; }
+
+.reItem {
+  background-size: 125%;
+  height: calc(33vw - 8em);
+  max-height: 400px;
+  max-width: 400px;
+  width: calc(33vw - 8em); }
+  .reItem:hover {
+    background-size: 100%; }
+  .reItem:hover .contHov {
+    opacity: 1; }
+
+#rBrand {
+  background-image: url("../img/rBrand.jpg"); }
+
+#wk {
+  background-image: url("../img/wk.jpg"); }
+
+#ted {
+  background-image: url("../img/ted.jpg"); }
+
+#adamT {
+  background-image: url("../img/aalogo.jpg"); }
+
+#selfComp {
+  background-image: url("../img/selfComp.jpg"); }
+
+#barney {
+  background-image: url("../img/barney.jpg"); }
+
+#add101 {
+  background-image: url("../img/add101.jpg"); }
+
+.contHov {
+  width: 100%; }
 
 /*------------------------
 --------ANIMATIONS--------

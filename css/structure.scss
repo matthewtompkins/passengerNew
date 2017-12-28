@@ -422,7 +422,7 @@
   height: 100%;
 }
 
-.typeTitle {
+#typeTitle {
   margin-top: -2em;
 }
 
@@ -464,4 +464,17 @@
       border-bottom: 1px solid $grey;
       border-left: 1px solid $grey;
     }
+}
+
+#quName {
+  height: 100%;
+}
+
+#servNote {
+  flex-direction: column;
+  height: 100%;
+}
+
+#noteClose {
+  cursor: pointer;
 }

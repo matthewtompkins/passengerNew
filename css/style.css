@@ -1057,7 +1057,7 @@ h3 {
 #quType {
   height: 100%; }
 
-.typeTitle {
+#typeTitle {
   margin-top: -2em; }
 
 .optionType {
@@ -1088,6 +1088,16 @@ h3 {
   #backArrow:hover {
     border-bottom: 1px solid #7A7575;
     border-left: 1px solid #7A7575; }
+
+#quName {
+  height: 100%; }
+
+#servNote {
+  flex-direction: column;
+  height: 100%; }
+
+#noteClose {
+  cursor: pointer; }
 
 /*------------------------
 -------RESPONSIVE---------

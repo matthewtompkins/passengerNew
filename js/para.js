@@ -93,13 +93,17 @@ if ( window.location.pathname.includes("contact.html") ) {
 
   //FORM VARIABLES
 
-  var quDiv = $("#quDiv");
+  var quDiv = document.getElementById("quDiv");
 
   var query = document.getElementById("query");
   query.addEventListener("click", showQuery);
 
   var backArrow = document.getElementById("backArrow");
   backArrow.addEventListener("click", queryBack)
+
+  var quName = document.getElementById("quName");
+
+  var typeTitle = document.getElementById("typeTitle");
 
   //TYPE OPTIONS
 
@@ -108,11 +112,36 @@ if ( window.location.pathname.includes("contact.html") ) {
     bgGrad.css("background-position", "25%");
     optionType.removeClass("activeOption");
     $(this).addClass("activeOption");
+
+    setTimeout(function() {
+
+      showName();
+    },300);
   });
 
-  //TYPE RADIOS
+  var optServ = document.getElementById("optServ");
+  optServ.addEventListener("click", function() {
 
+    selectRad("serv")
+  });
 
+  var optEvent = document.getElementById("optEvent");
+  optEvent.addEventListener("click", function() {
+
+    selectRad("eve")
+  });
+
+  var optVol = document.getElementById("optVol");
+  optVol.addEventListener("click", function() {
+
+    selectRad("vol")
+  });
+
+  var optQu = document.getElementById("optQu");
+  optQu.addEventListener("click", function() {
+
+    selectRad("qu")
+  });
 }
 
 window.addEventListener("scroll", function() {
@@ -125,9 +154,6 @@ window.addEventListener("scroll", function() {
     } else if ( window.location.pathname.includes("story.html") ) {
 
       requestAnimationFrame(parallaxStory);
-    } else if ( window.location.pathname.includes("contact.html") ) {
-
-      requestAnimationFrame(parallaxContact);
     }
   }
 }, false);
@@ -280,13 +306,6 @@ function animateScene(object, direction, distance, speed) {
   object.css( direction, makePercent);
 }
 
-//CONTACT PARALLAX FUNCTIONS
-
-function parallaxContact() {
-
-
-}
-
 //CONTACT FUNCTIONS
 
 function hideContact() {
@@ -343,34 +362,83 @@ function showQuery() {
   contactDiv.attr("state", "type");
   setTimeout(function() {
 
-    quDiv.css("display", "block");
+    quDiv.style.display = "block";
 
     setTimeout(function() {
 
-      quDiv.css("opacity", "1");
+      quDiv.style.opacity = "1";
     }, 60);
   }, 600);
 
 }
 
-function showName(object) {
+function showName() {
 
-  console.log(object);
-  object.addClass("activeOption");
+  if ( $("#radServ").attr("checked") === "checked" ) {
+
+    var servNote = document.getElementById("servNote");
+    servNote.style.display = "flex";
+
+    var noteClose = document.getElementById("noteClose");
+    noteClose.addEventListener("click", function() {
+
+      servNote.style.display = "none";
+    });
+  }
+
+  contactDiv.attr("state", "name");
+
+  quName.style.display = "flex";
+
+  typeTitle.style.opacity = "0";
+
+  setTimeout(function() {
+
+    quName.style.opacity = "1";
+  }, 60);
+}
+
+function selectRad(type) {
+
+  $(".radType").attr("checked", false);
+
+  if ( type === "serv" ) {
+
+    var radServ = $("#radServ").attr("checked", "checked");
+  } else if ( type === "eve" ) {
+
+    var radEvent = $("#radEvent").attr("checked", "checked");
+  } else if ( type === "vol" ) {
+
+    var radVol = $("#radVol").attr("checked", "checked");
+  } else {
+
+    var radQu = $("#radQu").attr("checked", "checked");
+  }
 }
 
 function queryBack() {
 
   if ( contactDiv.attr("state") === "type" ) {
-    
+
     optionType.removeClass("activeOption");
     bgGrad.css("background-position", "100%");
-    quDiv.css("opacity", "0");
+    quDiv.style.opacity = "0";
 
     setTimeout(function() {
 
-      quDiv.css("display", "none");
+      quDiv.style.display = "none";
       showContact();
+    }, 600);
+  } else if ( contactDiv.attr("state") === "name" ) {
+
+    contactDiv.attr("state", "type");
+    quName.style.opacity = "0";
+    bgGrad.css("background-position", "50%");
+
+    setTimeout(function() {
+
+      quName.style.display = "none";
     }, 600);
   }
 }

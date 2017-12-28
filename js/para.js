@@ -272,7 +272,7 @@ function parallaxContact() {
 function hideContact() {
 
   contactDiv.css("opacity", "0");
-  bgGrad.css("background-position", "75%");
+  bgGrad.css("background-position", "50%");
 
   setTimeout(function() {
 

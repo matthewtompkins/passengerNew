@@ -367,3 +367,68 @@
 .artStory {
   max-width: 80vw;
 }
+
+/*------------------------
+------CONTACT-EL---------
+------------------------*/
+
+.heroContact {
+  min-height: 100vh;
+}
+
+#bgGrad {
+  background: linear-gradient(90deg, $pink 0%, $white 50%);
+  background-position: 100% 0%;
+  background-size: 200%;
+  height: 100%;
+}
+
+#contactWrapper {
+  height: 100%;
+}
+
+.contactBtn {
+  border: 1px solid $pink;
+  border-radius: 30px;
+  cursor: pointer;
+
+    &:hover {
+      background-color: $pink;
+      border: 1px solid $pink;
+      color: $white;
+    }
+}
+
+.contactOption {
+  flex-direction: column;
+  height: 300px;
+  width: 400px;
+
+    &:first-child {
+      border-right: 1px solid $pink;
+    }
+}
+
+#emDiv {
+  width: 400px;
+}
+
+#quDiv {
+  height: 400px;
+  width: 400px;
+}
+
+#quType {
+  height: 100%;
+}
+
+.optionType {
+  cursor: pointer;
+  height: calc(50% - 1em);
+  margin: .5em;
+  width: calc(50% - 1em);
+
+    &:hover {
+      background-color: $pink;
+    }
+}

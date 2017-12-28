@@ -46,7 +46,7 @@ var missionStatement = document.getElementById("missionStatement");
 
 var contService = document.getElementById("contService");
 
-//STORY PAGE ELEMENTS
+//OUR STORY ELEMENTS
 
 if ( window.location.pathname.includes("story.html") ) {
 
@@ -70,6 +70,31 @@ if ( window.location.pathname.includes("story.html") ) {
   var car = $("#car");
 }
 
+//CONTACT ELEMENTS
+
+if ( window.location.pathname.includes("contact.html") ) {
+
+  var bgGrad = $("#bgGrad");
+
+  var contactDiv = $("#contactDiv");
+
+  var promptEm = $("#promptEm");
+  var promptQu = $("#promptQu");
+
+  var emDiv = $("#emDiv");
+
+  var quDiv = $("#quDiv");
+
+  var emBack = document.getElementById("emBack");
+  emBack.addEventListener("click", closeEmergency);
+
+  var emergency = document.getElementById("emergency");
+  emergency.addEventListener("click", showEmergency);
+
+  var query = document.getElementById("query");
+  query.addEventListener("click", showQuery);
+}
+
 window.addEventListener("scroll", function() {
 
   if ( !ifMobile ) {
@@ -80,6 +105,9 @@ window.addEventListener("scroll", function() {
     } else if ( window.location.pathname.includes("story.html") ) {
 
       requestAnimationFrame(parallaxStory);
+    } else if ( window.location.pathname.includes("contact.html") ) {
+
+      requestAnimationFrame(parallaxContact);
     }
   }
 }, false);
@@ -230,6 +258,77 @@ function animateScene(object, direction, distance, speed) {
   var makePercent = calcSpeed + '%';
 
   object.css( direction, makePercent);
+}
+
+//CONTACT PARALLAX FUNCTIONS
+
+function parallaxContact() {
+
+
+}
+
+//CONTACT FUNCTIONS
+
+function hideContact() {
+
+  contactDiv.css("opacity", "0");
+  bgGrad.css("background-position", "75%");
+
+  setTimeout(function() {
+
+    contactDiv.css("display", "none");
+  }, 600);
+}
+
+function showContact() {
+
+  contactDiv.css("display", "flex");
+  setTimeout(function() {
+    contactDiv.css("opacity", "1");
+  }, 60);
+}
+
+function showEmergency() {
+
+  hideContact();
+
+  setTimeout(function() {
+
+    emDiv.css("display", "block");
+
+    setTimeout(function() {
+
+      emDiv.css("opacity", "1");
+    }, 60 );
+  }, 600);
+}
+
+function closeEmergency() {
+
+  bgGrad.css("background-position", "100%");
+  emDiv.css("opacity", "0");
+
+  setTimeout(function() {
+
+    emDiv.css("display", "none");
+    showContact();
+  }, 600);
+}
+
+function showQuery() {
+
+  hideContact();
+
+  setTimeout(function() {
+
+    quDiv.css("display", "block");
+
+    setTimeout(function() {
+
+      quDiv.css("opacity", "1");
+    }, 60);
+  }, 600);
+
 }
 
 //MENU FUNCTIONS

@@ -1017,6 +1017,55 @@ h3 {
   max-width: 80vw; }
 
 /*------------------------
+------CONTACT-EL---------
+------------------------*/
+.heroContact {
+  min-height: 100vh; }
+
+#bgGrad {
+  background: linear-gradient(90deg, #FAC6D0 0%, #fdfdfd 50%);
+  background-position: 100% 0%;
+  background-size: 200%;
+  height: 100%; }
+
+#contactWrapper {
+  height: 100%; }
+
+.contactBtn {
+  border: 1px solid #FAC6D0;
+  border-radius: 30px;
+  cursor: pointer; }
+  .contactBtn:hover {
+    background-color: #FAC6D0;
+    border: 1px solid #FAC6D0;
+    color: #fdfdfd; }
+
+.contactOption {
+  flex-direction: column;
+  height: 300px;
+  width: 400px; }
+  .contactOption:first-child {
+    border-right: 1px solid #FAC6D0; }
+
+#emDiv {
+  width: 400px; }
+
+#quDiv {
+  height: 400px;
+  width: 400px; }
+
+#quType {
+  height: 100%; }
+
+.optionType {
+  cursor: pointer;
+  height: calc(50% - 1em);
+  margin: .5em;
+  width: calc(50% - 1em); }
+  .optionType:hover {
+    background-color: #FAC6D0; }
+
+/*------------------------
 -------RESPONSIVE---------
 ------------------------*/
 @media only screen and (max-width: 768px) {

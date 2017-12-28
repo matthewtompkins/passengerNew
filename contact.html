@@ -29,7 +29,7 @@
     <div class="logo storyLogo logoMain nrc pAbs left marg2 contain op0">
       <a href="./index.html" class="inLink dBlock"></a>
     </div>
-    <div href="#" class="pAbs right marg2 hamburger"></div>
+    <div href="#" class="pAbs right marg2 hamburger hamburgerPink"></div>
   </header>
   <div class="sidebar storySidebar pFix right bottom bgWhite z3 transition3">
     <ul class="socialNav">
@@ -43,69 +43,69 @@
       <li class="transition3 fullWidth navLi"><a href="./index.html" class="navOption inLink dBlock op0 transition6">Home</a></li>
       <li class="transition3 fullWidth navLi"><a href="./compass.html" class="navOption inLink dBlock op0 transition6">Compass</a></li>
       <li class="transition3 fullWidth navLi"><a href="./story.html" class="navOption inLink dBlock op0 transition6">Our Story</a></li>
+      <li class="transition3 fullWidth navLi"><a href="./resources.html" class="navOption inLink dBlock op0 transition6">Resources</a></li>
       <li class="transition3 fullWidth navLi"><a href="http://www.hazeldenbettyford.org/thought-for-the-day" class="navOption inLink dBlock op0 transition6">Thought of the Day</a></li>
-      <li class="transition3 fullWidth navLi"><a href="#" class="navOption inLink dBlock op0 transition6">Contact</a></li>
       <li class="transition3 fullWidth navLi"><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RWC5JMVTEWTTL" class="navOption inLink dBlock op0 transition6">Donate</a></li>
     </ul>
   </nav>
   <main>
-    <section class="heroStory fullWidth pRel bgBlack z4">
-      <h2 class="fontHead fontLower fontWhite pAbs bottom left pad1">Resources</h2>
+    <section class="fullWidth bgWhite heroContact" id="heroContact">
+      <div class="fullWidth pAbs top left transition6" id="bgGrad"></div>
+      <h2 class="fontHead fontLower fontPink pAbs bottom left marg1">Contact Us</h2>
+      <div class="fullWidth pAbs top left dFlex flexCenter" id="contactWrapper">
+        <div class="dFlex flexCenter transition6" id="contactDiv">
+          <div class="contactOption dFlex flexCenter bgWhite pad1 alignCenter pRel transition6" id="promptEm">
+            <div class="prompt">
+              <h3 class="fontHead fontLower fontGrey marg1">For emergencies</h3>
+              <p class="fontBody fontLtGrey marg1">Get emergency assistance from a third-party service.</p>
+              <p class="contactBtn transition3 fontBody fontPink dInBlock marg1 pad1 fontLower" id="emergency">Get me help</p>
+            </div>
+          </div>
+          <div class="contactOption dFlex flexCenter bgWhite pad1 alignCenter pRel transition6" id="promptQu">
+            <div class="prompt">
+              <h3 class="fontHead fontLower fontGrey marg1">For help from us</h3>
+              <p class="fontBody fontLtGrey marg1">Partake in the services provided by Passenger, volunteer, or for general inquiries.</p>
+              <p class="contactBtn transition3 fontBody fontPink dInBlock marg1 pad1 fontLower" id="query">Light a path</p>
+            </div>
+          </div>
+        </div>
+        <div class="bgWhite pad2 transition6 dNone op0 alignCenter" id="emDiv">
+          <p class="fontBody fontLower fontGrey">If you are experiencing an emergency, we recommend you call the Common Ground crisis hotline: 1-800-231-1127</p>
+          <p class="fontBody fontLower fontGrey op5 pad1">Please be safe.</p>
+          <p class="fontBody fontLower fontPink contactBtn dInBlock pad1 transition3" id="emBack">back to contact</p>
+        </div>
+        <div class="bgWhite pad2 transition6 dNone op0 pRel" id="quDiv">
+          <form action="https://formspree.io/passengerrecovery@gmail.com" method="POST">
+            <div class="fullWidth pAbs top left clearfix z1" id="quType">
+              <div class="optionType pad1 floatLeft bgLtGrey dFlex flexCenter alignCenter">
+                <p class="fontHead fontLower fontWhite">Ride service/clean green room</p>
+              </div>
+              <div class="optionType pad1 floatLeft bgLtGrey dFlex flexCenter alignCenter">
+                <p class="fontHead fontLower fontWhite">Schedule an event</p>
+              </div>
+              <div class="optionType pad1 floatLeft bgLtGrey dFlex flexCenter alignCenter">
+                <p class="fontHead fontLower fontWhite">Volunteer</p>
+              </div>
+              <div class="optionType pad1 floatLeft bgLtGrey dFlex flexCenter alignCenter">
+                <p class="fontHead fontLower fontWhite">General question</p>
+              </div>
+              <input type="radio" class="dNone" name="type" value="serviceRequest" id="radServ">
+              <input type="radio" class="dNone" name="type" value="eventRequest" id="radEvent">
+              <input type="radio" class="dNone" name="type" value="volunteerRequest" id="radVol">
+              <input type="radio" class="dNone" name="type" value="generalQuestion" id="radQuest">
+            </div>
+        </form>
+      </div>
     </section>
-    <div class="imgRecords belowHero fullWidth pRel z4 cover nrc"></div>
-    <div class="resources fullWidth pad2 dFlex flexCenter bgWhite">
-      <div class="reItem marg2 pRel cover nrc transition6" id="rBrand">
-        <div class="contHov pAbs bottom left pad1 bgPink op0 transition6 alignCenter">
-          <h4 class="fontHead fontWhite fontLower">Nerdist Podcast <br><span class="fontGrey">Russell Brand</span></h4>
-        </div>
-        <a href="https://nerdist.com/nerdist-podcast-russell-brand/" target="_blank" class="inLink dBlock pAbs top left z1"></a>
-      </div>
-      <div class="reItem marg2 pRel cover nrc transition6" id="wk">
-        <div class="contHov pAbs bottom left pad1 bgPink op0 transition6 alignCenter">
-          <h4 class="fontHead fontWhite fontLower">I Don't Believe in a Higher Power <br><span class="fontGrey">Andrew W.K.</span></h4>
-        </div>
-        <a href="http://andrewwk.com/news/advice-i-dont-believe-in-a-higher-power" target="_blank" class="inLink dBlock pAbs top left z1"></a>
-      </div>
-      <div class="reItem marg2 pRel cover nrc transition6" id="ted">
-        <div class="contHov pAbs bottom left pad1 bgPink op0 transition6 alignCenter">
-          <h4 class="fontHead fontWhite fontLower">Vulnerability <br><span class="fontGrey">Brene Brown</span></h4>
-        </div>
-        <a href="https://www.ted.com/talks/brene_brown_on_vulnerability" target="_blank" class="inLink dBlock pAbs top left z1"></a>
-      </div>
-      <div class="reItem marg2 pRel cover nrc transition6" id="adamT">
-        <div class="contHov pAbs bottom left pad1 bgPink op0 transition6 alignCenter">
-          <h4 class="fontHead fontWhite fontLower">Understanding the Program <br><span class="fontGrey">Adam T.</span></h4>
-        </div>
-        <a href="https://www.youtube.com/watch?v=6LtZiYptPRg&t=67s" target="_blank" class="inLink dBlock pAbs top left z1"></a>
-      </div>
-      <div class="reItem marg2 pRel cover nrc transition6" id="selfComp">
-        <div class="contHov pAbs bottom left pad1 bgPink op0 transition6 alignCenter">
-          <h4 class="fontHead fontWhite fontLower">An exercise in self-compassion <br><span class="fontGrey">Alexandra Panzer</span></h4>
-        </div>
-        <a href="https://ed.ted.com/featured/pDulIc5E" target="_blank" class="inLink dBlock pAbs top left z1"></a>
-      </div>
-      <div class="reItem marg2 pRel cover nrc transition6" id="barney">
-        <div class="contHov pAbs bottom left pad1 bgPink op0 transition6 alignCenter">
-          <h4 class="fontHead fontWhite fontLower">Dark side of hedonism <br><span class="fontGrey">Barney Hoskyns</span></h4>
-        </div>
-        <a href="https://www.theguardian.com/global/2017/feb/05/dark-side-of-hedonism-a-rock-journalists-battle-with-drug-addiction" target="_blank" class="inLink dBlock pAbs top left z1"></a>
-      </div>
-      <div class="reItem marg2 pRel cover nrc transition6" id="add101">
-        <div class="contHov pAbs bottom left pad1 bgPink op0 transition6 alignCenter">
-          <h4 class="fontHead fontWhite fontLower">Addiction 101 <br><span class="fontGrey">Raj Mehta</span></h4>
-        </div>
-        <a href="https://www.youtube.com/watch?v=S86t89HOYlE" target="_blank" class="inLink dBlock pAbs top left z1"></a>
-      </div>
-    </div>
   </main>
   <footer class="mainFooter fluidContainer pRel bgLtGrey alignCenter z5">
     <nav class="footerNav auto pad4">
       <ul>
         <li class="footLi dInBlock"><a href="./index.html" class="fontHead fontGrey fontLower transition3 inLink">Home</a></li>
-        <li class="footLi dInBlock"><a href="./compass.html" class="fontHead fontGrey fontLower transition3 inLink">Compass</a></li>
         <li class="footLi dInBlock"><a href="./story.html" class="fontHead fontGrey fontLower transition3 inLink">Our Story</a></li>
+        <li class="footLi dInBlock"><a href="./compass.html" class="fontHead fontGrey fontLower transition3 inLink">Compass</a></li>
+        <li class="footLi dInBlock"><a href="./resources.html" class="fontHead fontGrey fontLower transition3 inLink">Resources</a></li>
         <li class="footLi dInBlock"><a href="http://www.hazeldenbettyford.org/thought-for-the-day" class="fontHead fontGrey fontLower transition3 inLink">Thought of the Day</a></li>
-        <li class="footLi dInBlock"><a href="#" class="fontHead fontGrey fontLower transition3 inLink">Contact</a></li>
         <li class="footLi dInBlock"><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RWC5JMVTEWTTL" class="fontHead fontGrey fontLower transition3 inLink">Donate</a></li>
       </ul>
       <nav class="footSoc auto pad4 pRel">
@@ -128,4 +128,3 @@
   </div>
   <script src="./js/para.js"></script>
 </body>
-</html>

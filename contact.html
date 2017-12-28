@@ -70,30 +70,33 @@
           </div>
         </div>
         <div class="bgWhite pad2 transition6 dNone op0 alignCenter" id="emDiv">
-          <p class="fontBody fontLower fontGrey">If you are experiencing an emergency, we recommend you call the Common Ground crisis hotline: 1-800-231-1127</p>
-          <p class="fontBody fontLower fontGrey op5 pad1">Please be safe.</p>
+          <p class="fontBody fontGrey">If you are experiencing an emergency, we recommend you call the Common Ground crisis hotline: 1-800-231-1127</p>
+          <p class="fontBody fontGrey op5 pad1">Please be safe.</p>
           <p class="fontBody fontLower fontPink contactBtn dInBlock pad1 transition3" id="emBack">back to contact</p>
         </div>
         <div class="pad2 transition6 dNone op0 pRel" id="quDiv">
           <form action="https://formspree.io/passengerrecovery@gmail.com" method="POST">
+            <div id="backArrow" class="pAbs"></div>
             <div class="fullWidth pAbs top left clearfix z1" id="quType">
-              <div class="optionType pad1 floatLeft bgLtGrey dFlex flexCenter alignCenter">
-                <p class="fontHead fontLower fontWhite">Ride service/clean green room</p>
+              <p class="typeTitle fontHead fontLower fontGrey alignCenter">what can we help you with?</p>
+              <div class="optionType pad1 floatLeft bgLtGrey dFlex flexCenter alignCenter" id="optServ">
+                <p class="fontHead fontLower fontGrey">Get a ride/clean green room</p>
               </div>
-              <div class="optionType pad1 floatLeft bgLtGrey dFlex flexCenter alignCenter">
-                <p class="fontHead fontLower fontWhite">Schedule an event</p>
+              <div class="optionType pad1 floatLeft bgLtGrey dFlex flexCenter alignCenter" id="optEvent">
+                <p class="fontHead fontLower fontGrey">Schedule an event</p>
               </div>
-              <div class="optionType pad1 floatLeft bgLtGrey dFlex flexCenter alignCenter">
-                <p class="fontHead fontLower fontWhite">Volunteer</p>
+              <div class="optionType pad1 floatLeft bgLtGrey dFlex flexCenter alignCenter" id="optVol">
+                <p class="fontHead fontLower fontGrey">Volunteer</p>
               </div>
-              <div class="optionType pad1 floatLeft bgLtGrey dFlex flexCenter alignCenter">
-                <p class="fontHead fontLower fontWhite">General question</p>
+              <div class="optionType pad1 floatLeft bgLtGrey dFlex flexCenter alignCenter" id="optQu">
+                <p class="fontHead fontLower fontGrey">General question</p>
               </div>
               <input type="radio" class="dNone" name="type" value="serviceRequest" id="radServ">
               <input type="radio" class="dNone" name="type" value="eventRequest" id="radEvent">
               <input type="radio" class="dNone" name="type" value="volunteerRequest" id="radVol">
-              <input type="radio" class="dNone" name="type" value="generalQuestion" id="radQuest">
+              <input type="radio" class="dNone" name="type" value="generalQuestion" id="radQu">
             </div>
+            <div id="frontArrow"></div>
         </form>
       </div>
     </section>
@@ -102,8 +105,8 @@
     <nav class="footerNav auto pad4">
       <ul>
         <li class="footLi dInBlock"><a href="./index.html" class="fontHead fontGrey fontLower transition3 inLink">Home</a></li>
-        <li class="footLi dInBlock"><a href="./story.html" class="fontHead fontGrey fontLower transition3 inLink">Our Story</a></li>
         <li class="footLi dInBlock"><a href="./compass.html" class="fontHead fontGrey fontLower transition3 inLink">Compass</a></li>
+        <li class="footLi dInBlock"><a href="./story.html" class="fontHead fontGrey fontLower transition3 inLink">Our Story</a></li>
         <li class="footLi dInBlock"><a href="./resources.html" class="fontHead fontGrey fontLower transition3 inLink">Resources</a></li>
         <li class="footLi dInBlock"><a href="http://www.hazeldenbettyford.org/thought-for-the-day" class="fontHead fontGrey fontLower transition3 inLink">Thought of the Day</a></li>
         <li class="footLi dInBlock"><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RWC5JMVTEWTTL" class="fontHead fontGrey fontLower transition3 inLink">Donate</a></li>

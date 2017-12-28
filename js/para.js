@@ -81,9 +81,9 @@ if ( window.location.pathname.includes("contact.html") ) {
   var promptEm = $("#promptEm");
   var promptQu = $("#promptQu");
 
-  var emDiv = $("#emDiv");
+  //EMERGENCY VARIABLES
 
-  var quDiv = $("#quDiv");
+  var emDiv = $("#emDiv");
 
   var emBack = document.getElementById("emBack");
   emBack.addEventListener("click", closeEmergency);
@@ -91,8 +91,28 @@ if ( window.location.pathname.includes("contact.html") ) {
   var emergency = document.getElementById("emergency");
   emergency.addEventListener("click", showEmergency);
 
+  //FORM VARIABLES
+
+  var quDiv = $("#quDiv");
+
   var query = document.getElementById("query");
   query.addEventListener("click", showQuery);
+
+  var backArrow = document.getElementById("backArrow");
+  backArrow.addEventListener("click", queryBack)
+
+  //TYPE OPTIONS
+
+  var optionType = $(".optionType").on("click", function() {
+
+    bgGrad.css("background-position", "25%");
+    optionType.removeClass("activeOption");
+    $(this).addClass("activeOption");
+  });
+
+  //TYPE RADIOS
+
+
 }
 
 window.addEventListener("scroll", function() {
@@ -283,6 +303,7 @@ function hideContact() {
 function showContact() {
 
   contactDiv.css("display", "flex");
+
   setTimeout(function() {
     contactDiv.css("opacity", "1");
   }, 60);
@@ -319,6 +340,7 @@ function showQuery() {
 
   hideContact();
 
+  contactDiv.attr("state", "type");
   setTimeout(function() {
 
     quDiv.css("display", "block");
@@ -329,6 +351,28 @@ function showQuery() {
     }, 60);
   }, 600);
 
+}
+
+function showName(object) {
+
+  console.log(object);
+  object.addClass("activeOption");
+}
+
+function queryBack() {
+
+  if ( contactDiv.attr("state") === "type" ) {
+    
+    optionType.removeClass("activeOption");
+    bgGrad.css("background-position", "100%");
+    quDiv.css("opacity", "0");
+
+    setTimeout(function() {
+
+      quDiv.css("display", "none");
+      showContact();
+    }, 600);
+  }
 }
 
 //MENU FUNCTIONS

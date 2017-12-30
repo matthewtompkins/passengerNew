@@ -1090,7 +1090,10 @@ h3 {
     border-left: 1px solid #7A7575; }
 
 #quName {
-  height: 100%; }
+  height: calc(100% - 1em);
+  margin-left: .5em;
+  margin-top: .5em;
+  width: calc(100% - 1em); }
 
 #servNote {
   flex-direction: column;
@@ -1098,6 +1101,40 @@ h3 {
 
 #noteClose {
   cursor: pointer; }
+
+.nameDivTitle {
+  border-bottom: 1px solid #E0DEE0; }
+
+.inDiv {
+  height: 1.5em;
+  width: calc(100% - 2em + 20px); }
+
+.formInput {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #E0DEE0;
+  height: 100%;
+  outline: none; }
+  .formInput:focus {
+    border-bottom: 1px solid #FAC6D0; }
+
+.nameIcon {
+  background-image: url("../img/user.png"); }
+
+.emailIcon {
+  background-image: url("../img/email.png"); }
+
+.validateDiv {
+  right: 1em; }
+
+.trueIcon {
+  background-image: url("../img/true.png"); }
+
+.falseIcon {
+  background-image: url("../img/false.png"); }
+
+#toMessage {
+  border-radius: 1.5em; }
 
 /*------------------------
 -------RESPONSIVE---------

@@ -122,27 +122,95 @@ if ( window.location.pathname.includes("contact.html") ) {
   var optServ = document.getElementById("optServ");
   optServ.addEventListener("click", function() {
 
-    selectRad("serv")
+    selectRad("serv");
   });
 
   var optEvent = document.getElementById("optEvent");
   optEvent.addEventListener("click", function() {
 
-    selectRad("eve")
+    selectRad("eve");
   });
 
   var optVol = document.getElementById("optVol");
   optVol.addEventListener("click", function() {
 
-    selectRad("vol")
+    selectRad("vol");
   });
 
   var optQu = document.getElementById("optQu");
   optQu.addEventListener("click", function() {
 
-    selectRad("qu")
+    selectRad("qu");
   });
+
+  var formInput = $(".formInput").on("focusin", function() {
+
+    var thisIn = $(this);
+
+    var inHold = thisIn.next();
+    inHold.css("bottom", "1em");
+
+    formInput.on("keyup", function() {
+
+      var thisIn = $(this);
+
+      if ( thisIn.val() === "" ) {
+
+        if ( thisIn.attr("name") === "name" ) {
+
+          nValTrue.css("opacity", "0");
+          nValFalse.css("opacity", ".5");
+        } else {
+
+          eValTrue.css("opacity", "0");
+          eValFalse.css("opacity", ".5");
+        }
+
+        var inHold = thisIn.next();
+        inHold.css("bottom", "0");
+      } else {
+
+        if ( thisIn.attr("name") === "name" ) {
+
+          nValFalse.css("opacity", "0");
+          nValTrue.css("opacity", ".5");
+        } else {
+
+          validate(thisIn);
+        }
+      }
+    }).on("focusout", function() {
+
+      var thisIn = $(this);
+
+      if ( thisIn.val() === "" ) {
+
+        if ( thisIn.attr("name") === "name" ) {
+
+          nValTrue.css("opacity", "0");
+          nValFalse.css("opacity", ".5");
+        } else {
+
+          eValTrue.css("opacity", "0");
+          eValFalse.css("opacity", ".5");
+        }
+
+        var inHold = thisIn.next();
+        inHold.css("bottom", "0");
+
+      }
+    });
+  });
+
+  var nValTrue = $("#nVal .trueIcon");
+  var nValFalse = $("#nVal .falseIcon");
+
+  var eValTrue = $("#eVal .trueIcon");
+  var eValFalse = $("#eVal .falseIcon");
+
 }
+
+//PARALLAX LISTENER
 
 window.addEventListener("scroll", function() {
 
@@ -440,6 +508,21 @@ function queryBack() {
 
       quName.style.display = "none";
     }, 600);
+  }
+}
+
+function validate(input) {
+
+  var eStrings = [".", "@"];
+
+  if ( !input.val().includes( eStrings[0], eStrings[1] ) ) {
+
+    eValTrue.css("opacity", "0");
+    eValFalse.css("opacity", ".5");
+  } else {
+
+    eValFalse.css("opacity", "0");
+    eValTrue.css("opacity", ".5");
   }
 }
 

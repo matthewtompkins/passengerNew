@@ -467,7 +467,10 @@
 }
 
 #quName {
-  height: 100%;
+  height: calc(100% - 1em);
+  margin-left: .5em;
+  margin-top: .5em;
+  width: calc(100% - 1em);
 }
 
 #servNote {
@@ -477,4 +480,49 @@
 
 #noteClose {
   cursor: pointer;
+}
+
+.nameDivTitle {
+  border-bottom: 1px solid $ltGrey;
+}
+
+.inDiv {
+  height: 1.5em;
+  width: calc(100% - 2em + 20px);
+}
+
+.formInput {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid $ltGrey;
+  height: 100%;
+  outline: none;
+
+    &:focus {
+      border-bottom: 1px solid $pink;
+    }
+}
+
+.nameIcon {
+  background-image: url("../img/user.png");
+}
+
+.emailIcon {
+  background-image: url("../img/email.png");
+}
+
+.validateDiv {
+  right: 1em;
+}
+
+.trueIcon {
+  background-image: url("../img/true.png");
+}
+
+.falseIcon {
+  background-image: url("../img/false.png");
+}
+
+#toMessage {
+  border-radius: 1.5em;
 }

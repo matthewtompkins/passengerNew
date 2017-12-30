@@ -96,12 +96,39 @@
               <input type="radio" class="dNone radType" name="type" value="volunteerRequest" id="radVol">
               <input type="radio" class="dNone radType" name="type" value="generalQuestion" id="radQu">
               <div class="bgWhite op0 pAbs top left fullWidth dNone transition6" id="quName">
-                <div class="bgWhite pAbs top left fullWidth dNone transition6 flexCenter alignCenter" id="servNote">
+                <div class="bgWhite pAbs top left fullWidth dNone transition6 flexCenter alignCenter z3" id="servNote">
                   <p class="fontGrey fontLower fontBody pAbs top right marg2" id="noteClose">x</p>
                   <h3 class="fontHead fontGrey fontLower">Please note:</h3>
                   <p class="fontBody fontGrey op5 pad1">We ask that interested parties (Artists/Crew/Management) try to give us 24 hours notice and any related info (venue, soundcheck/stage times).</p>
                 </div>
-                
+                <div class="nameDiv bgWhite pAbs top left fullWidth alignCenter">
+                  <div class="nameDivTitle pad1">
+                    <p class="fontHead fontGrey fontLower">Your info</p>
+                  </div>
+                  <div class="pad2 dFlex flexCenter">
+                    <div class="nameIcon icon dInBlock contain op5 nrc center marg1"></div>
+                    <div class="pRel dInBlock inDiv">
+                      <input class="formInput pAbs top left fullWidth fontGrey fontBody transition3 z2" name="name">
+                      <h4 class="fontHead fontLower fontPink pAbs bottom transition3">Your name</h4>
+                      <div class="validateDiv pAbs bottom right" id="nVal">
+                        <div class="icon trueIcon pAbs op0 contain nrc"></div>
+                        <div class="icon falseIcon pAbs op0 contain nrc"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pad2 dFlex flexCenter">
+                    <div class="emailIcon icon dInBlock contain op5 nrc center marg1"></div>
+                    <div class="pRel dInBlock inDiv">
+                      <input class="formInput pAbs top left fullWidth fontGrey fontBody transition3 z2" name="email">
+                      <h4 class="fontHead fontLower fontPink pAbs bottom transition3">Your e-mail</h4>
+                      <div class="validateDiv pAbs bottom right" id="eVal">
+                        <div class="icon trueIcon pAbs op0 contain nrc"></div>
+                        <div class="icon falseIcon pAbs op0 contain nrc"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p class="fontBody fontLower fontPink contactBtn dInBlock pad1 marg1 transition3 pAbs bottom right" id="toMessage">Next</p>
               </div>
             </div>
         </form>

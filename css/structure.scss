@@ -451,8 +451,8 @@
 }
 
 #backArrow {
-  border-bottom: 1px solid $pink;
-  border-left: 1px solid $pink;
+  border-bottom: 2px solid $grey;
+  border-left: 2px solid $grey;
   cursor: pointer;
   height: 20px;
   left: -20px;
@@ -461,8 +461,8 @@
   width: 20px;
 
     &:hover {
-      border-bottom: 1px solid $grey;
-      border-left: 1px solid $grey;
+      border-bottom: 2px solid $ltGrey;
+      border-left: 2px solid $ltGrey;
     }
 }
 
@@ -528,20 +528,20 @@
 }
 
 #msg {
-  background-color: $ltGrey;
-  border: none;
-  color: $white;
-  height: calc(400px - 16em);
+  border: 1px solid $ltGrey;
+  border-radius: 2em;
+  color: $grey;
+  height: calc(400px - 19em);
   outline: none;
   resize: none;
-
-    &:focus {
-      background-color: rgba(10,10,10,.05);
-      box-shadow: none;
-      color: $grey;
-    }
 }
 
 input[type="submit"] {
+  border-radius: 24px;
+  font-size: 1em;
 
+    &:active {
+      box-shadow: none;
+      outline: none;
+    }
 }

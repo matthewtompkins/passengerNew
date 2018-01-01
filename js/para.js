@@ -105,7 +105,9 @@ if ( window.location.pathname.includes("contact.html") ) {
 
   var typeTitle = document.getElementById("typeTitle");
 
-  //TYPE OPTIONS
+
+
+  //TYPE OF QUERY INPUT
 
   var optionType = $(".optionType").on("click", function() {
 
@@ -143,6 +145,8 @@ if ( window.location.pathname.includes("contact.html") ) {
     selectRad("qu");
   });
 
+  //NAME AND EMAIL INPUT
+
   var formInput = $(".formInput").on("focusin", function() {
 
     var thisIn = $(this);
@@ -150,7 +154,7 @@ if ( window.location.pathname.includes("contact.html") ) {
     var inHold = thisIn.next();
     inHold.css("bottom", "1em");
 
-    formInput.on("keyup", function() {
+    formInput.on("input", function() {
 
       var thisIn = $(this);
 
@@ -160,20 +164,26 @@ if ( window.location.pathname.includes("contact.html") ) {
 
           nValTrue.css("opacity", "0");
           nValFalse.css("opacity", ".5");
+          thisIn.attr("valid", "false");
         } else {
 
           eValTrue.css("opacity", "0");
           eValFalse.css("opacity", ".5");
+          thisIn.attr("valid", "false");
         }
 
         var inHold = thisIn.next();
         inHold.css("bottom", "0");
       } else {
 
+        var inHold = thisIn.next();
+        inHold.css("bottom", "1em");
+
         if ( thisIn.attr("name") === "name" ) {
 
           nValFalse.css("opacity", "0");
           nValTrue.css("opacity", ".5");
+          thisIn.attr("valid", "true");
         } else {
 
           validate(thisIn);
@@ -207,6 +217,25 @@ if ( window.location.pathname.includes("contact.html") ) {
 
   var eValTrue = $("#eVal .trueIcon");
   var eValFalse = $("#eVal .falseIcon");
+
+  var toMessage = document.getElementById("toMessage");
+  toMessage.addEventListener("click", function() {
+
+    if ( formInput[0].getAttribute("valid") === "true" && formInput[1].getAttribute("valid") === "true" ) {
+
+      var errMsg = document.getElementById("errMsg");
+      errMsg.style.opacity = "0";
+      showMsg();
+    } else {
+
+      var errMsg = document.getElementById("errMsg");
+      errMsg.style.opacity = "1";
+    }
+  });
+
+  //MESSAGE INPUT
+
+  var quMsg = document.getElementById("quMsg");
 
 }
 
@@ -423,6 +452,8 @@ function closeEmergency() {
   }, 600);
 }
 
+//QUERY FUNCTION
+
 function showQuery() {
 
   hideContact();
@@ -439,6 +470,66 @@ function showQuery() {
   }, 600);
 
 }
+
+
+function queryBack() {
+
+  if ( contactDiv.attr("state") === "type" ) {
+
+    optionType.removeClass("activeOption");
+    quDiv.style.opacity = "0";
+    bgGrad.css("background-position", "100%");
+
+    setTimeout(function() {
+
+      quDiv.style.display = "none";
+      showContact();
+    }, 600);
+  } else if ( contactDiv.attr("state") === "name" ) {
+
+    contactDiv.attr("state", "type");
+    quName.style.opacity = "0";
+    bgGrad.css("background-position", "50%");
+
+    setTimeout(function() {
+
+      quName.style.display = "none";
+    }, 600);
+  } else if ( contactDiv.attr("state") === "msg" ) {
+
+    contactDiv.attr("state", "name");
+    quMsg.style.opacity = "0";
+    bgGrad.css("background-position", "25%");
+
+    setTimeout(function() {
+
+      quMsg.style.display = "none";
+    }, 600);
+  }
+}
+
+//TYPE FUNCTIONS
+
+function selectRad(type) {
+
+  $(".radType").attr("checked", false);
+
+  if ( type === "serv" ) {
+
+    var radServ = $("#radServ").attr("checked", "checked");
+  } else if ( type === "eve" ) {
+
+    var radEvent = $("#radEvent").attr("checked", "checked");
+  } else if ( type === "vol" ) {
+
+    var radVol = $("#radVol").attr("checked", "checked");
+  } else {
+
+    var radQu = $("#radQu").attr("checked", "checked");
+  }
+}
+
+//NAME FUNCTIONS
 
 function showName() {
 
@@ -466,64 +557,41 @@ function showName() {
   }, 60);
 }
 
-function selectRad(type) {
 
-  $(".radType").attr("checked", false);
-
-  if ( type === "serv" ) {
-
-    var radServ = $("#radServ").attr("checked", "checked");
-  } else if ( type === "eve" ) {
-
-    var radEvent = $("#radEvent").attr("checked", "checked");
-  } else if ( type === "vol" ) {
-
-    var radVol = $("#radVol").attr("checked", "checked");
-  } else {
-
-    var radQu = $("#radQu").attr("checked", "checked");
-  }
-}
-
-function queryBack() {
-
-  if ( contactDiv.attr("state") === "type" ) {
-
-    optionType.removeClass("activeOption");
-    bgGrad.css("background-position", "100%");
-    quDiv.style.opacity = "0";
-
-    setTimeout(function() {
-
-      quDiv.style.display = "none";
-      showContact();
-    }, 600);
-  } else if ( contactDiv.attr("state") === "name" ) {
-
-    contactDiv.attr("state", "type");
-    quName.style.opacity = "0";
-    bgGrad.css("background-position", "50%");
-
-    setTimeout(function() {
-
-      quName.style.display = "none";
-    }, 600);
-  }
-}
+//EMAIL VALIDATION
 
 function validate(input) {
 
   var eStrings = [".", "@"];
 
-  if ( !input.val().includes( eStrings[0], eStrings[1] ) ) {
+  var value = input.val();
 
-    eValTrue.css("opacity", "0");
-    eValFalse.css("opacity", ".5");
-  } else {
+  if ( value.includes( eStrings[0]) && value.includes( eStrings[1] ) ) {
+
 
     eValFalse.css("opacity", "0");
     eValTrue.css("opacity", ".5");
+    input.attr("valid", "true");
+  } else {
+
+    eValTrue.css("opacity", "0");
+    eValFalse.css("opacity", ".5");
+    input.attr("valid", "false");
   }
+}
+
+//MESSAGE FUNCTIONS
+
+function showMsg() {
+
+  contactDiv.attr("state", "msg");
+  bgGrad.css("background-position", "0%");
+  quMsg.style.display = "block";
+
+  setTimeout(function() {
+
+    quMsg.style.opacity = "1";
+  }, 60);
 }
 
 //MENU FUNCTIONS

@@ -466,7 +466,7 @@
     }
 }
 
-#quName {
+#quName, #quMsg {
   height: calc(100% - 1em);
   margin-left: .5em;
   margin-top: .5em;
@@ -524,5 +524,24 @@
 }
 
 #toMessage {
-  border-radius: 1.5em;
+  border-radius: 24px;
+}
+
+#msg {
+  background-color: $ltGrey;
+  border: none;
+  color: $white;
+  height: calc(400px - 16em);
+  outline: none;
+  resize: none;
+
+    &:focus {
+      background-color: rgba(10,10,10,.05);
+      box-shadow: none;
+      color: $grey;
+    }
+}
+
+input[type="submit"] {
+
 }

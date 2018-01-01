@@ -1089,7 +1089,7 @@ h3 {
     border-bottom: 1px solid #7A7575;
     border-left: 1px solid #7A7575; }
 
-#quName {
+#quName, #quMsg {
   height: calc(100% - 1em);
   margin-left: .5em;
   margin-top: .5em;
@@ -1134,7 +1134,19 @@ h3 {
   background-image: url("../img/false.png"); }
 
 #toMessage {
-  border-radius: 1.5em; }
+  border-radius: 24px; }
+
+#msg {
+  background-color: #E0DEE0;
+  border: none;
+  color: #fdfdfd;
+  height: calc(400px - 16em);
+  outline: none;
+  resize: none; }
+  #msg:focus {
+    background-color: rgba(10, 10, 10, 0.05);
+    box-shadow: none;
+    color: #7A7575; }
 
 /*------------------------
 -------RESPONSIVE---------

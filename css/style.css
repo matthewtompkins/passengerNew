@@ -1134,7 +1134,8 @@ h3 {
   background-image: url("../img/false.png"); }
 
 #toMessage {
-  border-radius: 24px; }
+  border-radius: 24px;
+  padding: .8em 1em; }
 
 #msg {
   border: 1px solid #E0DEE0;
@@ -1147,7 +1148,7 @@ h3 {
 input[type="submit"] {
   border-radius: 24px;
   font-size: 1em; }
-  input[type="submit"]:active {
+  input[type="submit"]:focus {
     box-shadow: none;
     outline: none; }
 

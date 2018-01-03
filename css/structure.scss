@@ -525,6 +525,7 @@
 
 #toMessage {
   border-radius: 24px;
+  padding: .8em 1em;
 }
 
 #msg {
@@ -540,7 +541,7 @@ input[type="submit"] {
   border-radius: 24px;
   font-size: 1em;
 
-    &:active {
+    &:focus {
       box-shadow: none;
       outline: none;
     }

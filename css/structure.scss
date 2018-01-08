@@ -387,6 +387,13 @@
   height: 100%;
 }
 
+#contactDiv {
+
+    @include responsive(small-screen) {
+      flex-direction: column;
+    }
+}
+
 .contactBtn {
   border: 1px solid $pink;
   border-radius: 30px;
@@ -402,10 +409,22 @@
 .contactOption {
   flex-direction: column;
   height: 300px;
+  max-width: 50vw;
   width: 400px;
+
+    @include responsive(small-screen) {
+      height: inherit;
+      max-width: 90vw;
+      width: 90vw;
+    }
 
     &:first-child {
       border-right: 1px solid $pink;
+
+        @include responsive(small-screen) {
+          border-bottom: 1px solid $pink;
+          border-right: 0;
+        }
     }
 }
 

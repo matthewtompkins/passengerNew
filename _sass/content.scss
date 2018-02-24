@@ -504,7 +504,7 @@ h3 {
 }
 
 #rightBorder {
-  border-right: 1px solid $ltGrey;
+  border-right: 1px solid $pink;
   height: 0;
   left: -1px;
   width: 100%;
@@ -521,8 +521,8 @@ h3 {
 }
 
 #animTLBorder {
-  border-left: 1px solid $ltGrey;
-  border-top: 1px solid $ltGrey;
+  border-left: 1px solid $pink;
+  border-top: 1px solid $pink;
   height: 0;
   right: calc(100% - 12em + 1px);
   transition-delay: .6s;
@@ -530,15 +530,15 @@ h3 {
 }
 
 #animBRBorder {
-  border-bottom: 1px solid $ltGrey;
-  border-right: 1px solid $ltGrey;
+  border-bottom: 1px solid $pink;
+  border-right: 1px solid $pink;
   height: 0;
   transition-delay: .9s;
   width: 0;
 }
 
 #animTopBorder {
-  border-top: 1px solid $ltGrey;
+  border-top: 1px solid $pink;
   height: 0;
   transition-delay: 1.2s;
   width: 0;

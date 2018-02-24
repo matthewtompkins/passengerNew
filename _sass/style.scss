@@ -4,6 +4,14 @@
 @import 'content.scss';
 @import 'structure.scss';
 
+html {
+  font-size: 1em;
+
+    @include responsive(xl-screen) {
+      font-size: 1.25em;
+    }
+}
+
 /*------------------------
 -------RESPONSIVE---------
 ------------------------*/
@@ -227,4 +235,76 @@
           padding-right: 0;
         }
     }
+}
+
+#instafeed img {
+
+    @include responsive(small-screen) {
+      height: 25vw;
+      width: 25vw;
+    }
+}
+
+//OUR STORY
+
+#problem article, #insp article {
+
+    @include responsive(small-screen) {
+      padding: 0;
+    }
+}
+
+.storyCon {
+
+  @include responsive(small-screen) {
+    border: none!important;
+    float: none;
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+#probText {
+
+  @include responsive(small-screen) {
+    margin-bottom: 2em;
+  }
+}
+
+#probText, #probText2 {
+
+  @include responsive(small-screen) {
+    left: auto;
+  }
+}
+
+.imgCloud, .imgTree, .imgCar {
+
+  @include responsive(small-screen) {
+    display: none;
+  }
+}
+
+.solContent, .dearDiv {
+
+  @include responsive(small-screen) {
+    padding: 1em;
+  }
+}
+
+.dearDiv h2 {
+
+  @include responsive(small-screen) {
+    font-size: 1.618em;
+  }
+}
+
+.subTitle {
+
+  @include responsive(small-screen) {
+
+    &::before, &::after {
+      display: none;
+    }
+  }
 }

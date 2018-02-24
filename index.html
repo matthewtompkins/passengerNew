@@ -10,6 +10,19 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="./js/instafeed.min.js"></script>
   <script type="text/javascript">
+
+    var winWidth = window.innerWidth;
+
+    var feedCt;
+
+    if ( winWidth < 768 ) {
+
+      feedCt = 4;
+    } else {
+
+      feedCt = 10;
+    }
+
     var feed = new Instafeed({
         get: 'user',
         userId: '3050738035',
@@ -18,7 +31,7 @@
         resolution: 'standard_resolution',
         template: '<a href="{{link}}" target="_blank"><img src="{{image}}" />',
         sortBy: 'most-recent',
-        limit: 10,
+        limit: feedCt,
         links: false
     });
     feed.run();

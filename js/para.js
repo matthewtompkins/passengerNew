@@ -50,7 +50,6 @@ var contService = document.getElementById("contService");
 
 if ( window.location.pathname.includes("story.html") ) {
 
-  //TEXT ANIMATIONS
   var contProb = document.getElementById("problem");
 
   var probHeight = contProb.offsetHeight;
@@ -61,6 +60,10 @@ if ( window.location.pathname.includes("story.html") ) {
   var animTLBorder = $("#animTLBorder");
   var animBRBorder = $("#animBRBorder");
   var animTopBorder = $("#animTopBorder");
+
+  var heroInsp = document.getElementById("heroInsp");
+
+  var dearVis = document.getElementById("dearVis");
 
   var contInsp = document.getElementById("insp");
 
@@ -327,9 +330,34 @@ function parallaxStory() {
 
   var inspTop = contInsp.offsetTop;
 
-  if ( scrollTop >= probTop - 200 && scrollTop <= probTop + probHeight ) {
+  var hInspTop = heroInsp.offsetTop;
+
+  var dearVisTop = dearVis.offsetTop;
+
+  //HAMBURGER scroll
+
+
+
+  if ( scrollTop <= probTop ) {
+
+    hamWhite();
+  } else if ( scrollTop >= probTop && scrollTop <= hInspTop ) {
+
+    hamPink();
+  } else if ( scrollTop >= hInspTop && scrollTop <= dearVisTop ) {
+
+    hamWhite();
+  } else if ( scrollTop >= dearVisTop ) {
+
+    hamPink();
+  }
+
+  if ( scrollTop >= probTop - ( probHeight / 2 ) && scrollTop <= probTop + probHeight ) {
 
     requestAnimationFrame(function() {
+
+      var windowBtm = $(window).scrollTop() + $(window).height();
+      var insTop = $("#insp").position().top;
 
       animateBorder(rightBorder);
       slideText(probText, "left");
@@ -350,7 +378,7 @@ function parallaxStory() {
 
   }
 
-  if ( scrollTop >= inspTop - inspHeight - 200 && scrollTop <= inspTop + inspHeight ) {
+  if ( scrollTop >= inspTop - inspHeight && scrollTop <= inspTop + inspHeight ) {
 
       if ( scrollTop < newScroll ) {
 

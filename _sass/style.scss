@@ -314,3 +314,10 @@ html {
 .contactOption {
   min-height: 50vh;
 }
+
+#quName, #quMsg {
+
+    @include responsive(small-screen) {
+      margin-top: 0;
+    }
+}

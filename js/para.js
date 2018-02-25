@@ -334,6 +334,13 @@ function parallaxStory() {
 
   var dearVisTop = dearVis.offsetTop;
 
+  var win = $(window);
+
+  var windowBtm = win.scrollTop() + win.height();
+
+  var ins = $("#insp");
+  var insTop = ins.position().top;
+
   //HAMBURGER scroll
 
 
@@ -352,12 +359,9 @@ function parallaxStory() {
     hamPink();
   }
 
-  if ( scrollTop >= probTop - ( probHeight / 2 ) && scrollTop <= probTop + probHeight ) {
+  if ( scrollTop >= ( win.height() / 2 ) ) {
 
     requestAnimationFrame(function() {
-
-      var windowBtm = $(window).scrollTop() + $(window).height();
-      var insTop = $("#insp").position().top;
 
       animateBorder(rightBorder);
       slideText(probText, "left");
@@ -378,7 +382,9 @@ function parallaxStory() {
 
   }
 
-  if ( scrollTop >= inspTop - inspHeight && scrollTop <= inspTop + inspHeight ) {
+  if ( windowBtm >= insTop && window.pageYOffset <= insTop + ins.height() ) {
+
+    console.log(insTop + ins.height() );
 
       if ( scrollTop < newScroll ) {
 

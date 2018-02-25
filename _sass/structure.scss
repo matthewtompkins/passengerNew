@@ -549,6 +549,9 @@
 }
 
 #msg {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
   border: 1px solid $ltGrey;
   border-radius: 2em;
   color: $grey;
@@ -558,6 +561,7 @@
 }
 
 input[type="submit"] {
+  background-color: transparent;
   border-radius: 24px;
   font-size: 1em;
 

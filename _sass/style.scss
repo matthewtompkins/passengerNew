@@ -309,6 +309,15 @@ html {
   }
 }
 
+//Resources
+
+.contHov {
+
+  @include responsive(small-screen) {
+    opacity: 1;
+  }
+}
+
 //CONTACT
 
 .contactOption {

@@ -434,7 +434,7 @@
 
 #quDiv {
   height: 400px;
-  max-width: 100%;
+  max-width: calc(100% - 80px);
   width: 400px;
 }
 

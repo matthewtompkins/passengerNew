@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Passenger Compass</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="Passenger Recovery Compass">
+  <meta name="author" content="Matt Tompkins">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="Passenger Recovery Compass">
+  <meta property="og:image" content="./img/ogImage.jpg">
+  <meta property="og:site_name" content="Passenger Recovery">
+  <meta property="og:description" content="A web application for finding support meetings for those struggling with alcoholism and/or drug addiction.">
+  <meta property="og:url" content="http://www.passengerrecovery.com">
+  <link rel="shortcut icon" href="./img/icon.png">
+  <link rel="stylesheet" href="./css/style.css">
+  <!-- <link rel="stylesheet" href="./css/styles.min.css"> -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Josefin+Sans|Raleway" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="./js/loadScreen.js"></script>
+  <script src="./js/geolocate.js"></script>
+  <script src="./js/map.js"></script>
+  <script async
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBCjHpFFXjQO943R8Xt6MZ-DrWV1B70kxc&libraries=geometry,places&callback=initMap">
+  </script>
+</head>
+<body id="finderBody">
+  <div id="loadScreen">
+    <div id="loadLogo"></div>
+    <div id="loadWheel"></div>
+  </div>
+  <div id="map"></div>
+  <div id="map-elements">
+    <header id="finderHeader">
+      <div class="header-logo"><a href="./index.html"></a></div>
+      <ul class="header-menu">
+        <li id="mFinderNav"></li>
+        <li id="mFinderCloseNav"></li>
+        <li class="header-options"><a href="./index.html#services-landing">Services</a></li>
+        <li class="header-options"><a href="./our-story.html">Our Story</a></li>
+        <li class="header-options"><a href="./contact.html">Contact</a></li>
+      </ul>
+    </header>
+    <div id="mFinderMenu">
+      <ul>
+        <li class="mNavOption"><a href="./index.html#services-landing">Services</a></li>
+        <li class="mNavOption"><a href="./our-story.html">Our Story</a></li>
+        <li class="mNavOption"><a href="./contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div id="mSearch">
+      <div id="searchBar">
+        <input id="searchForm" type="text" placeholder="Enter a location" />
+        <div id="searchButton"></div>
+        <div id="addBtn"></div>
+      </div>
+    </div>
+    <div id="mInfo">
+      <div id="infoDiv"></div>
+    </div>
+    <div id="addDiv">
+      <div id="inputClose"></div>
+      <div id="meetingInput">
+        <h1>Add a Meeting</h1>
+        <div id="nameInputDiv">
+          <input id="nameInput" maxlength="35" placeholder="Insert meeting name" value="">
+          <p id="animateName">Name</p>
+        </div>
+        <div id="dayTimeContainer">
+          <div id="timeInputDiv">
+            <!--<input id="timeSelect" type="time" name="usr_time" /> -->
+            <select id="hourSelect" type="time">
+              <option value="12">12</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+            </select>
+            <p>:</p>
+            <select id="minuteSelect" type="time">
+              <option value="00">00</option>
+              <option value="15">15</option>
+              <option value="30">30</option>
+              <option value="45">45</option>
+            </select>
+            <select id="meridiemSelect" type="time">
+              <option value="AM">AM</option>
+              <option value="PM">PM</option>
+            </select>
+            <p id="animateTime">Time</p>
+          </div>
+          <div id="dayInputDiv">
+            <select id="daySelect">
+              <option value="Monday">Monday</option>
+              <option value="Tuesday">Tuesday</option>
+              <option value="Wednesday">Wednesday</option>
+              <option value="Thursday">Thursday</option>
+              <option value="Friday">Friday</option>
+              <option value="Saturday">Saturday</option>
+              <option value="Sunday">Sunday</option>
+            </select>
+            <div id="swapDaySelect">
+              <div id="dayWindow">
+                <p id="dayValue">Monday</p>
+                <div id="dayBtn"></div>
+              </div>
+              <ul id="dayList">
+                <li class="day" id="monday">Monday</li>
+                <li class="day" id="tuesday">Tuesday</li>
+                <li class="day" id="wednesday">Wednesday</li>
+                <li class="day" id="thursday">Thursday</li>
+                <li class="day" id="friday">Friday</li>
+                <li class="day" id="saturday">Saturday</li>
+                <li class="day" id="sunday">Sunday</li>
+              </ul>
+            </div>
+            <p id="animateDay">Day</p>
+          </div>
+        </div>
+        <div id="radioDiv">
+          <p>AA</p>
+          <div id="aaRadioContainer" class="radioContainer">
+            <div class="radioImg radioSelect" id="radioImgAA"></div>
+            <input type="radio" id="aa" name="type" value="AA" checked>
+          </div>
+          <p>NA</p>
+          <div id="naRadioContainer" class="radioContainer">
+            <div class="radioImg radioUnselect" id="radioImgNA"></div>
+            <input type="radio" id="na" name="type" value="NA">
+          </div>
+          <p>NAMI</p>
+          <div id="namiRadioContainer" class="radioContainer">
+            <div class="radioImg radioUnselect" id="radioImgNAMI"></div>
+            <input type="radio" id="nami" name="type" value="NAMI">
+          </div>
+          <p>R</p>
+          <div id="rRadioContainer" class="radioContainer">
+            <div class="radioImg radioUnselect" id="radioImgR"></div>
+            <input type="radio" id="r" name="type" value="R">
+          </div>
+        </div>
+        <div id="noteInputDiv">
+          <div id="textAreaAfterTL"></div>
+          <div id="textAreaAfterBR"></div>
+          <textarea id="noteInput" maxlength="140" placeholder="Enter meeting notes"></textarea>
+          <p id="animateNote">Note</p>
+        </div>
+        <div id="submitAddress">Add Meeting</div>
+      </div>
+    </div>
+    <div id="mFilter">
+      <div id="filterDiv">
+        <div id="filterDivCloseBtn"></div>
+        <div id="filterDayDiv">
+          <h1>Day</h1>
+          <ul id="filterDayList">
+            <li id="filterMonday" class="filterDay">M</li>
+            <li id="filterTuesday" class="filterDay">T</li>
+            <li id="filterWednesday" class="filterDay">W</li>
+            <li id="filterThursday" class="filterDay">Th</li>
+            <li id="filterFriday" class="filterDay">F</li>
+            <li id="filterSaturday" class="filterDay">S</li>
+            <li id="filterSunday" class="filterDay">Su</li>
+          </ul>
+        </div>
+        <div id="filterTodDiv">
+          <h1>Time</h1>
+          <ul id="filterTodList">
+            <li id="filterAM" class="filterTod">Morning</li>
+            <li id="filterAfternoon" class="filterTod">Afternoon</li>
+            <li id="filterEvening" class="filterTod">Evening</li>
+          </ul>
+        </div>
+        <div id="filterTypeDiv">
+          <h1>Type</h1>
+          <ul id="filterTypeList">
+            <li id="filterAA" class="filterType">AA</li>
+            <li id="filterNA" class="filterType">NA</li>
+            <li id="filterNAMI" class="filterType">NAMI</li>
+            <li id="filterR" class="filterType">R</li>
+          </ul>
+        </div>
+        <div id="clearDiv">
+          <p id="clearFiltersBtn">Clear Filters</p>
+        </div>
+      </div>
+    </div>
+    <div id="filterFooter">
+      <div id="nearMe" class="filterBtn">
+        <p id="nearMeTxt">Near Me</p>
+        <p>Near Me Today</p>
+      </div>
+      <div id="filterOptions" class="filterBtn">
+        <p id="filterTxt">Filters</p>
+        <p>Filter Options</p>
+      </div>
+      <div id="listView" class="filterBtn">
+        <p>List View</p>
+      </div>
+      <div id="showAll" class="filterBtn">
+        <p>Show All</p>
+      </div>
+    </div>
+    <div id="locateButton"></div>
+  </div>
+  <div id="errorScreen">
+    <div id="errorMsg">
+      <div id="closeError"></div>
+      <p id="errorTxt"></p>
+      <div id="errorLV"></div>
+    </div>
+  </div>
+  <div id="deleteScreen">
+      <div id="deleteDiv">
+        <div id="deleteDivClose"></div>
+        <h1>Delete this meeting?</h1>
+        <p id="deleteName" class="deleteTitle"></p>
+        <p id="deleteAddress" class="deleteP"></p>
+        <p id="deleteTime" class="deleteP"></p>
+        <p id="deleteType" class="deleteP"></p>
+        <p id="deleteNote" class="deleteP"></p>
+        <p id="deleteConfirm" class="deleteBtn">Yes</p>
+        <p id="deleteCancel" class="deleteBtn">No</p>
+      </div>
+      <div id="deleteSuccess">
+        <p>Meeting successfully deleted.</p>
+      </div>
+  </div>
+  <div id="signInScreen">
+    <div id="signInDiv">
+      <div id="signInClose"></div>
+      <h1>Sign in to Add Meeting</h1>
+      <div id="idDiv">
+        <input id="userID" placeholder="e-mail" value="">
+        <p id="animateID" class="animateP">e-mail</p>
+      </div>
+      <div id="pwDiv">
+        <input id="userPW" type="PASSWORD" placeholder="password" value="">
+        <p id="animatePW" class="animateP">password</p>
+      </div>
+      <div id="authDiv">
+        <p id="signInBtn">Sign-In</p>
+        <p id="authCatch"></p>
+      </div>
+      <div id="disclaimerDiv">
+        <p id="disclaimerP">In order to ensure the best consistency and fidelity of the Finder database, only Passenger-approved users are allowed to add and edit meeting information. To request a sign-in account, or to alert us about outdated or inaccurate meeting information, please <a href="./contact.html">contact Passenger</a> directly. Thank you!</p>
+      </div>
+    </div>
+  </div>
+  <div id="sampleMeeting">
+    <div id="sampleHeader">
+      <p>This is what your listing will look like.</p>
+      <p>Please verify that the information is correct.</p>
+    </div>
+    <div id="sampleDiv">
+      <h1 id="sampleName"></h1>
+      <p id="sampleAddress"></p>
+      <p id="sampleTime"></p>
+      <p id="sampleType"></p>
+      <p id="sampleNote"></p>
+      <p id="uploadMeeting" class="sampleBtn">Add Meeting</p>
+      <p id="changeInfo" class="sampleBtn">Go Back</p>
+    </div>
+    <div id="successContainer">
+      <div id="success">
+        <p>Added successfully. Thank you!</p>
+      </div>
+    </div>
+    <div id="failureContainer">
+      <div id="failure">
+        <div id="failureBtn"></div>
+        <p>Meeting failed to add. Check to make sure you have a working internet connection, and are logged in. If problem persists, <a href="./contact.html">contact us</a> directly or try again soon. Sorry!</p>
+      </div>
+    </div>
+  </div>
+  <div id="listViewScreen">
+    <div id="lvContainer">
+      <input id="tempACInput">
+      <div id="lvHeader">
+        <h1>Meetings</h1>
+        <p class="toMap">Back to Map</p>
+        <p class="nearMe" id="lvNearMe">Near Me Today</p>
+      </div>
+      <div id="lvFooter">
+        <p class="toMap">Back to Map</p>
+      </div>
+    </div>
+  </div>
+  <div id="reportScreen">
+    <div id="reportContainer">
+      <form class="report" action="https://formspree.io/passengerrecovery@gmail.com" method="POST">
+        <div id="reportClose"></div>
+        <input class="reportTitle" name="reportTitle" id="inTitle" readonly></input>
+        <input class="reportP" name="reportAddress" id="inAddress" readonly></input>
+        <input class="reportP" name="reportTime" id="inTime" readonly></input>
+        <input class="reportP" name="reportType" id="inType" readonly></input>
+        <input class="reportP" name="reportSerial" id="inSerial" readonly></input>
+        <select class="reportP" id="reportSelect" name="reportSelect">
+          <option value="" disabled selected>Please select an issue to report</option>
+          <option value="doesNotExist">This meeting does not exist</option>
+          <option value="wrongInfo">This meeting information is incorrect</option>
+          <option value="otherIssue">Other issue</option>
+        </select>
+        <textarea class="reportP" id="reportMessage" name="reportMessage" placeholder="Please include a short description of this meeting issue..." maxlength="240"></textarea>
+        <input type="submit" id="reportSubmit" value="Submit"></p>
+      </form>
+    </div>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+  <script>
+      var config = {
+      apiKey: "AIzaSyCvdPSYzRyC1NKc6Tqp8LrAqr30dM4baVM",
+      authDomain: "passenger-recovery.firebaseapp.com",
+      databaseURL: "https://passenger-recovery.firebaseio.com",
+      projectId: "passenger-recovery",
+      storageBucket: "passenger-recovery.appspot.com",
+      messagingSenderId: "935526919715"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="https://cdn.firebase.com/libs/firebaseui/1.0.1/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.1/firebaseui.css" />
+  <script src="./js/error.js"></script>
+  <script src="./js/asyncDatabase.js"></script>
+  <script src="./js/addMeeting.js"></script>
+  <script src="./js/filter.js"></script>
+  <script src="./js/fbAuth.js"></script>
+  <script src="./js/listView.js"></script>
+  <script src="./js/deleteAndEdit.js"></script>
+  <script src="./js/mFinder.js"></script>
+  <script src="./js/report.js"></script>
+  <script>
+    var mapDisplay = $("#map").height($(window).height());
+    window.addEventListener("resize", function() {
+      mapDisplay = $("#map").height($(window).height());
+      errorScreen.height($(window).height());
+      sampleMeeting.height($(window).height());
+      loadScreen.height($(window).height());
+      signInScreen.height($(window).height());
+      failureContainer.height($(window).height());
+    });
+  </script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-105314669-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+</body>
+</html>

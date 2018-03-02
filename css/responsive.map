@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "../_sass/responsive.css",
+	"sources": [
+		"../_sass/responsive.scss"
+	],
+	"sourcesContent": [
+		"\n\n$width-small: 768px;\n$width-medium: 992px;\n$width-large: 1200px;\n$width-xl: 1400px;\n\n@mixin responsive($width) {\n\n\n  @if $width == small-screen {\n\n    @media only screen and (max-width: $width-small) {@content};\n  }\n\n  @else if $width == medium-screen {\n\n    @media only screen and (max-width: $width-medium) {@content};\n  }\n\n\n  @if $width == large-screen {\n\n    @media only screen and (max-width: $width-large) {@content};\n  }\n\n  @else if $width == xl-screen {\n\n    @media only screen and (min-width: $width-xl) {@content};\n  }\n}\n\n@mixin landscape {\n\n    @media only screen and (max-height: 576px)\n                       and (orientation: landscape) {@content};\n}\n"
+	],
+	"mappings": "",
+	"names": []
+}

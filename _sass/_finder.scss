@@ -1002,7 +1002,7 @@ html {
               cursor: pointer;
               font-family: $header;
               font-size: .75em;
-              padding-top: 18px;
+              padding-top: .5em;
             }
         }
 
@@ -2057,7 +2057,7 @@ html {
 
 //BUTTONS
 
-  .button {
+  .compButton {
     background: #7A7575;
     border: 1px solid #F4F2FD;
     border-radius: 20px;

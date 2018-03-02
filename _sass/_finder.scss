@@ -149,30 +149,18 @@ html {
 
             @include responsive(medium-screen) {
               right: 20px;
-              top: 10px;
+              top: 5px;
             }
 
           #mFinderNav {
             display: none;
 
               @include responsive(medium-screen) {
-                background: url(../img/finderMenu.png) no-repeat center;
-                background-size: contain;
                 display: block;
-                height: 30px;
-                width: 30px;
-              }
-          }
 
-          #mFinderCloseNav {
-            display: none;
-
-              @include responsive(medium-screen) {
-                background: url(../img/finderMenu.png) no-repeat center;
-                background-size: contain;
-                display: none;
-                height: 30px;
-                width: 30px;
+                  &::before, &::after {
+                    background-color: $white!important;
+                  }
               }
           }
 

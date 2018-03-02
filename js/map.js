@@ -82,7 +82,7 @@ function initMap() {
   "featureType": "landscape",
   "stylers": [
     {
-      "color": "#f4f2fd"
+      "color": "#f8f7fc"
     }
   ]
 },

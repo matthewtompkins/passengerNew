@@ -193,7 +193,7 @@ html {
                 font-family: $header;
                 font-size: 14px;
                 text-decoration: none;
-                text-transform: uppercase;
+                text-transform: lowercase;
               }
           }
         }
@@ -411,7 +411,7 @@ html {
               position: absolute;
               right: 100%;
               text-transform: uppercase;
-              top: 3.25em;
+              top: 2em;
               transition: .6s;
             }
           }
@@ -447,7 +447,7 @@ html {
                   position: absolute;
                   right: 100%;
                   text-transform: uppercase;
-                  top: 2.5em;
+                  top: 2em;
                   transition: .6s;
                 }
               }
@@ -642,7 +642,7 @@ html {
             }
 
             #animateNote {
-              bottom: -1.25em;
+              bottom: -2.25em;
               color: $pink;
               display: block;
               font-family: $header;

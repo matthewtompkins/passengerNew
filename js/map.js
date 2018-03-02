@@ -198,7 +198,7 @@ function initMap() {
   "elementType": "geometry.fill",
   "stylers": [
     {
-      "color": "#db9cb1"
+      "color": "#FAC6D0"
     }
   ]
 },
@@ -207,7 +207,7 @@ function initMap() {
   "elementType": "geometry.stroke",
   "stylers": [
     {
-      "color": "#db9cb1"
+      "color": "#FAC6D0"
     }
   ]
 },

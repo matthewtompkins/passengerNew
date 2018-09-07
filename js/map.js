@@ -11,12 +11,56 @@ var placeSearch, autocomplete, place, acMarker, tempAC;
 
 var userIcon = "./img/userIcon.png";
 
+//map center
+
+var mapCenter = [];
+
+//Get Map Center
+
+function getMapCenter() {
+
+  var mapLat, mapLng;
+
+  mapLat = Number( getQueryVariable('lat') );
+
+  if ( !mapLat ) {
+
+    mapLat = 42.3974392;
+  }
+
+  mapLng = Number( getQueryVariable('lng') );
+
+  if ( !mapLng ) {
+
+    mapLng = -83.0656352;
+  }
+
+  mapCenter = [ mapLat, mapLng ];
+
+}
+
+//Get URL Variable
+
+function getQueryVariable(variable) {
+
+   var query = window.location.search.substring(1);
+   var vars = query.split("&");
+   for (var i=0;i<vars.length;i++) {
+           var pair = vars[i].split("=");
+           if(pair[0] == variable){return pair[1];}
+   }
+   return(false);
+}
+
 //launch google maps API and autocomplete API on google map callback function
+
 function initMap() {
+
+  getMapCenter();
 
   map = new google.maps.Map(document.getElementById("map"), {
     zoom: 12,
-    center: new google.maps.LatLng(42.3974392,-83.0656352),
+    center: new google.maps.LatLng( mapCenter[0] , mapCenter[1] ),
     mapTypeId: 'roadmap',
     disableDefaultUI: true,
     gestureHandling: 'greedy',
